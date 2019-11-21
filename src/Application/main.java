@@ -12,11 +12,11 @@ public class Main extends  Application {
 	}
 
 	@Override
-	public void start(Stage arg0) throws Exception {
+	public void start(Stage primarystage) throws Exception {
 		// TODO Auto-generated method stub
-		StartScreen startScreen = new StartScreen();
+		StartScreen startScreen = new StartScreen(primarystage);
 		startScreen.startanimation();
-		
+		primarystage.show();
 	}
 
 }
