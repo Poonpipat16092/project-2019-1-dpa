@@ -1,9 +1,11 @@
 package Graphic;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class GameOverScreem implements Screen {
 
 	@Override
-	public void draw() {
+	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 
 	}
