@@ -75,6 +75,7 @@ public class StartScreen implements Screen{
 //		start.setFont(arg0);
 //		exit.setFont(arg0);
 //		start.setStyle(arg0);
+//		exit.setFont(arg0);
 
 		start.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
