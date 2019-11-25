@@ -7,6 +7,8 @@ public abstract class GameObject {
 	protected int x,y;//location
 	protected int velX,velY;//speed per frame
 	protected ID id;
+	protected int limitX;
+	protected int limitY;
 	
 	public GameObject(int x,int y,ID id) {
 		this.x=x;

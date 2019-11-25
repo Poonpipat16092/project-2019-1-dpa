@@ -55,7 +55,7 @@ public class StartScreen implements Screen{
 	}
 	
 	@Override
-	public void startanimation() {
+	public void startAnimation() {
 		draw(gc);
 	}
 	
@@ -80,9 +80,7 @@ public class StartScreen implements Screen{
 		start.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
 				GameScreen game=new GameScreen(primarystage);
-				game.startanimation();
-//				gc.setFill(Color.WHITE);
-//				gc.fillText("HI", 100, 100);
+				game.startAnimation();
 			}
 		});
 		

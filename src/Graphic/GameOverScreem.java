@@ -11,7 +11,7 @@ public class GameOverScreem implements Screen {
 	}
 
 	@Override
-	public void startanimation() {
+	public void startAnimation() {
 		// TODO Auto-generated method stub
 
 	}
