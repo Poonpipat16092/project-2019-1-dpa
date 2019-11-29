@@ -19,12 +19,11 @@ public class Player extends GameObject {
 	public void tick() {
 		x+=velX;
 		y+=velY;
+		// find the limit of scene(edit this when got fix size)
 		if(x<=0) x=0;
 		if(x>=limitX-20) x=limitX-20;
 		if(y<=0) y=0;
-		if(y>=limitY-40) y=limitY-40;
-		// TODO Auto-generated method stub
-		
+		if(y>=limitY-40) y=limitY-40;	
 	}
 
 	@Override
