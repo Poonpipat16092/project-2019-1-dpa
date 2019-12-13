@@ -2,15 +2,18 @@ package object;
 
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends GameObject {
-	public static final int width=20;
-	public static final int height=20;
+	public static final int width=40;
+	public static final int height=40;
+	private int hp;
 	private int selfTimer=0;
+	public static final Image image=new Image("file:res/player1.png");
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
@@ -64,6 +67,7 @@ public class Player extends GameObject {
 		if(!isShow) return;
 		gc.setFill(Color.WHITE);
 		gc.fillRect(x, y, width, height);
+		gc.drawImage(image, x, y);
 		//check hp
 		//gc.fillText(Integer.toString(hp), 100, 200);
 	}
