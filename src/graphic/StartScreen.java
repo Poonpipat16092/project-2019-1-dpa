@@ -67,10 +67,10 @@ public class StartScreen implements Screen{
 		menu.setPadding(new Insets(30,40,10,10));//up,right
 		menu.setAlignment(Pos.BOTTOM_RIGHT);
 		
-		Button start=new Button("Start");
-		Button exit=new Button("Exit");
-		start.setPrefSize(240, 90);
-		exit.setPrefSize(240, 90);
+		Button start = new Button("Start");
+		Button exit = new Button("Exit");
+		start.setPrefSize(180, 90);
+		exit.setPrefSize(180, 90);
 		//TODO:add font and color
 //		start.setFont(arg0);
 //		exit.setFont(arg0);
