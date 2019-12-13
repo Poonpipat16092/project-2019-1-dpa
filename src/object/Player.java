@@ -13,7 +13,7 @@ public class Player extends GameObject {
 	public static final int height=40;
 	private int hp;
 	private int selfTimer=0;
-	public static final Image image=new Image("player1.png");
+	public static final Image image=new Image("player1.png",width,height,true,true);
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
@@ -31,7 +31,7 @@ public class Player extends GameObject {
 		x+=velX;
 		y+=velY;
 		if(selfTimer>=60) {
-			Bullet bullet=new Bullet(x+10, y, id, 1, handler);
+			Bullet bullet=new Bullet(x+width/2, y, id, 1, handler);
 			selfTimer=0;
 		}
 		// find the limit of scene(edit this when got fix size)

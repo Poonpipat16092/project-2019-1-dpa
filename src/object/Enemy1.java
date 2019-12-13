@@ -1,20 +1,22 @@
 package object;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy1 extends GameObject {
-	public static final int width=30;
-	public static final int height=30;
+	public static final int width=50;
+	public static final int height=50;
 	private int hp;
+	private Image image=new Image("meteorSmall.png",width,height,true,true);
 	
 	public Enemy1(ObjectHandler handler) {
-		super(random.nextInt(800),random.nextInt(200)-400,ID.Enemy,handler);
+		super(random.nextInt(400)+200,random.nextInt(200)-400,ID.Enemy,handler);
 		hp=1;
-		velX=3;
-		velY=1;
+		velX=random.nextInt(4)-2;
+		velY=3;
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
@@ -27,11 +29,8 @@ public class Enemy1 extends GameObject {
 		if(!isShow) return;
 		x+=velX;
 		y+=velY;
-		if(x<0) x=0;
-		if(x>limitX) x=limitX;
-		if(x>=limitX || x<=0) velX*=-1; 
 		//out of frame
-		if(y>limitY) setShow(false);
+		checkShow();
 		collision();
 	}
 
@@ -41,6 +40,7 @@ public class Enemy1 extends GameObject {
 		if(!isShow) return;
 		gc.setFill(Color.RED);
 		gc.fillRect(x, y, width, height);
+		gc.drawImage(image, x, y);
 
 	}
 	
@@ -64,6 +64,10 @@ public class Enemy1 extends GameObject {
 	
 	public void checkShow() {
 		if(hp<=0) setShow(false);
+		if(x<-50 || x>limitX) {
+			this.setShow(false);
+			return;
+		}
 		if(y>limitY) {
 			this.setShow(false);
 			return;
