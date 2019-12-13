@@ -1,5 +1,7 @@
 package object;
 
+import java.util.Random;
+
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Shape;
 
@@ -13,6 +15,7 @@ public abstract class GameObject {
 	protected int limitY;
 	protected ObjectHandler handler;
 	protected boolean isShow;
+	public static Random random=new Random();
 	
 	public GameObject(int x,int y,ID id,ObjectHandler handler) {
 		this.x=x;
@@ -75,6 +78,10 @@ public abstract class GameObject {
 		this.isShow = isShow;
 	}
 	
+	public Random getRandom() {
+		return random;
+	}
+
 	public abstract void getAttack();
 	
 	public abstract void checkShow();

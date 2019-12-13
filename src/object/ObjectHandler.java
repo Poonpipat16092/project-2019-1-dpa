@@ -9,7 +9,6 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class ObjectHandler {
 	
-	private List<GameObject> addObjects;
 	private List<GameObject> objects;
 	private Comparator<GameObject> comparator;
 	

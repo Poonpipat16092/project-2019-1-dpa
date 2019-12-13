@@ -12,8 +12,8 @@ public class Player extends GameObject {
 	public static final int height=20;
 	private int selfTimer=0;
 
-	public Player(int x,int y,ObjectHandler handler) {
-		super(x,y,ID.Player,handler);
+	public Player(ObjectHandler handler) {
+		super(400,500,ID.Player,handler);
 		hp=5;
 		velX=0;
 		velY=0;

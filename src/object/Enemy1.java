@@ -8,8 +8,8 @@ import javafx.scene.shape.Shape;
 public class Enemy1 extends GameObject {
 	public static final int width=30;
 	public static final int height=30;
-	public Enemy1(int x, int y,ObjectHandler handler) {
-		super(x,y,ID.Enemy,handler);
+	public Enemy1(ObjectHandler handler) {
+		super(random.nextInt(800),random.nextInt(200)-400,ID.Enemy,handler);
 		hp=1;
 		velX=3;
 		velY=1;
@@ -62,15 +62,10 @@ public class Enemy1 extends GameObject {
 	
 	public void checkShow() {
 		if(hp<=0) setShow(false);
-		if(y<0 || y>limitY) {
+		if(y>limitY) {
 			this.setShow(false);
 			return;
 		}
-		if(x<0 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
-
 	}
 	
 	public Shape getBounds() {

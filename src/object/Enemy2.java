@@ -1,5 +1,7 @@
 package object;
 
+import java.util.Random;
+
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -9,8 +11,8 @@ public class Enemy2 extends GameObject {
 	public static final int width=40;
 	public static final int height=40;
 	public int selfTimer=0;
-	public Enemy2(int x,int y,ObjectHandler handler) {
-		super(x,y,ID.Enemy,handler);
+	public Enemy2(ObjectHandler handler) {
+		super(random.nextInt(800),random.nextInt(200)-400,ID.Enemy,handler);
 		hp=1;
 		velX=2;
 		velY=2;

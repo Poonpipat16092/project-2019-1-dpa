@@ -38,7 +38,7 @@ public class GameScreen implements Screen {
 		
 		
 		//test handler
-		player =new Player(100,100,handler);
+		player =new Player(handler);
 		handler.addObject(player);
 	
 		
@@ -52,9 +52,7 @@ public class GameScreen implements Screen {
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, WIDTH, HEIGHT);
-
+		
 		timer=new AnimationTimer() {
 			@Override
 			public void handle(long current) {
@@ -122,10 +120,10 @@ public class GameScreen implements Screen {
 	public void spawnEnemy() {
 		if(stage==1) {
 			if(stageTime%100==0) {
-				Enemy1 enemy = new Enemy1(100, 0, handler);
+				Enemy1 enemy = new Enemy1(handler);
 			}
 			if(stageTime%200==0) {
-				Enemy2 enemy = new Enemy2(400,0,handler);
+				Enemy2 enemy = new Enemy2(handler);
 			}
 		}
 		stageTime++;
