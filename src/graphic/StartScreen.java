@@ -71,8 +71,8 @@ public class StartScreen implements Screen{
 		
 		Button start = new Button("Start");
 		Button exit = new Button("Exit");
-		start.setPrefSize(180, 90);
-		exit.setPrefSize(180, 90);
+		start.setPrefSize(120, 90);
+		exit.setPrefSize(120, 90);
 		//TODO:add font and color
 		start.setFont(mainFont);
 		exit.setFont(mainFont);
