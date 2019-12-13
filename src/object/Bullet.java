@@ -7,12 +7,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Bullet extends GameObject {
-	private int damage;
-	public static final int width=1;
+	public static final int width=50;
 	public static final int heigth=10;
 	
-	public Bullet(int x,int y,ID id,int damage,ObjectHandler handler) {
+	public Bullet(double x,double y,ID id,int damage,ObjectHandler handler) {
 		super(x, y, id, handler);
+		setDamage(damage);
 		limitY=700;
 		limitX=900;
 		setVel();
@@ -45,18 +45,16 @@ public class Bullet extends GameObject {
 
 	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
 		return 1;
 	}
 
 	@Override
 	public Shape getBounds() {
-		// TODO Auto-generated method stub
 		Rectangle rect=new Rectangle(x,y,width,heigth);
 		return rect;
 	}
 	
-	public void getAttack() {
+	public void getHit(int damage) {
 		checkShow();
 	}
 	
@@ -67,11 +65,11 @@ public class Bullet extends GameObject {
 	public void setVel() {
 		if(id==ID.Player) {
 			velX=0;
-			velY=-5;
+			velY=-7;
 		}
 		if(id==ID.Enemy) {
 			velX=0;
-			velY=5;
+			velY=7;
 		}
 	}
 	

@@ -13,10 +13,11 @@ public class Enemy1 extends GameObject {
 	private Image image=new Image("meteorSmall.png",width,height,true,true);
 	
 	public Enemy1(ObjectHandler handler) {
-		super(random.nextInt(400)+200,random.nextInt(200)-400,ID.Enemy,handler);
+		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler);
+		setDamage(1);
+		setScore(1);
+		setSpeed();
 		hp=1;
-		velX=random.nextInt(4)-2;
-		velY=3;
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
@@ -49,16 +50,16 @@ public class Enemy1 extends GameObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					temp.getAttack();
-					getAttack();
+					temp.getHit(getDamage());
+					getHit(temp.getDamage());
 				}
 			}
 		}
 		
 	}
 	
-	public void getAttack() {
-		hp--;
+	public void getHit(int damage) {
+		hp-=damage;
 		checkShow();
 	}
 	
@@ -72,6 +73,16 @@ public class Enemy1 extends GameObject {
 			this.setShow(false);
 			return;
 		}
+	}
+	
+	public void setSpeed() {
+		if(x>=400) {
+			velX=random.nextInt(2)-4;
+		}
+		else {
+			velX=random.nextInt(4);
+		}
+		velY=8;
 	}
 	
 	public Shape getBounds() {

@@ -9,20 +9,21 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends GameObject {
-	public static final int width=40;
-	public static final int height=40;
+	public static final int width=60;
+	public static final int height=60;
 	private int hp;
 	private int selfTimer=0;
 	public static final Image image=new Image("player1.png",width,height,true,true);
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
+		setDamage(1);
 		hp=5;
 		velX=0;
 		velY=0;
 		limitX=800;
 		limitY=600;
-		
+		handler.addObject(this);
 	}
 	
 	@Override
@@ -30,7 +31,7 @@ public class Player extends GameObject {
 		if(!isShow) return;
 		x+=velX;
 		y+=velY;
-		if(selfTimer>=60) {
+		if(selfTimer>=30) {
 			Bullet bullet=new Bullet(x+width/2, y, id, 1, handler);
 			selfTimer=0;
 		}
@@ -38,7 +39,7 @@ public class Player extends GameObject {
 		if(x<=0) x=0;
 		if(x>=limitX-width) x=limitX-width;
 		if(y<=0) y=0;
-		if(y>=limitY-height*2) y=limitY-height*2;	
+		if(y>=limitY-height*4/3) y=limitY-height*4/3;
 
 		collision();
 		selfTimer++;
@@ -49,19 +50,23 @@ public class Player extends GameObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Enemy) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					getAttack();
-					temp.getAttack();
+					getHit(temp.getDamage());
+					temp.getHit(getDamage());
 				}
 			}
 		}
 		
 	}
 	
-	public void getAttack() {
-		hp--;
+	public void getHit(int damage) {
+		hp-=damage;
 		checkShow();
 	}
-
+	
+	public void getHealth(int health) {
+		hp+=health;
+	}
+	
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
@@ -69,15 +74,18 @@ public class Player extends GameObject {
 		gc.fillRect(x, y, width, height);
 		gc.drawImage(image, x, y);
 		//check hp
-		//gc.fillText(Integer.toString(hp), 100, 200);
 	}
-	
+		
 	public void checkShow() {
 		if(hp<=0) setShow(false);
 	}
 
 	public int getZ() {
 		return 0;
+	}
+	
+	public int getHp() {
+		return hp;
 	}
 	
 	public Shape getBounds() {

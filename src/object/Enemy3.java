@@ -1,18 +1,25 @@
 package object;
 
+
+import graphic.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyHealth extends GameObject {
-	public static final int width=20;
-	public static final int height=20;
+public class Enemy3 extends GameObject {
+	public static final int width=40;
+	public static final int height=40;
+	public static final double speed=4;
+	public int hp;
+	private Image image;
 	
-	public supplyHealth(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-400,ID.Supply,handler);
-		velX=0;
-		velY=2;
+	public Enemy3(ObjectHandler handler){
+		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler);
+		setDamage(1);
+		setScore(50);
+		hp=1;
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
@@ -20,33 +27,33 @@ public class supplyHealth extends GameObject {
 
 	@Override
 	public void tick() {
-		checkShow();
 		if(isShow()==false) return;
-		y+=velY;
+		x+=speed*cos();
+		y+=speed*sin();
 		collosion();
 	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		if(!isShow) return;
-		gc.setFill(Color.PINK);
-		gc.fillRect(x, y, width, height);
+		if(isShow()==false) return;
+		gc.setFill(Color.PURPLE);
+		gc.fillRect(x, y, width , height);
 	}
 	
 	public void collosion() {
 		for(GameObject temp:handler.getObjects()) {
-			if(temp.id==ID.Player && temp.getZ()==0) {
+			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					((Player) temp).getHealth(1);
-					setShow(false);
+					temp.getHit(getDamage());
+					getHit(temp.getDamage());
 				}
 			}
 		}
 	}
-
+		
 	@Override
 	public int getZ() {
-		return 2;
+		return 1;
 	}
 
 	@Override
@@ -56,15 +63,13 @@ public class supplyHealth extends GameObject {
 
 	@Override
 	public void getHit(int damage) {
-		setShow(false);
+		hp-=damage;
+		checkShow();
 	}
 
 	@Override
 	public void checkShow() {
-		if(x<-50 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
+		if(hp<=0) setShow(false);
 		if(y>limitY) {
 			this.setShow(false);
 			return;

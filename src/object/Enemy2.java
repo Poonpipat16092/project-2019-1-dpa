@@ -13,6 +13,8 @@ public class Enemy2 extends GameObject {
 	public int selfTimer=0;
 	public Enemy2(ObjectHandler handler) {
 		super(random.nextInt(800),random.nextInt(200)-400,ID.Enemy,handler);
+		setDamage(1);
+		setScore(50);
 		hp=1;
 		velX=2;
 		velY=2;
@@ -29,7 +31,7 @@ public class Enemy2 extends GameObject {
 		y+=velY;
 		if(x<0) x=0;
 		if(x>limitX) x=limitX;
-		if(x>=limitX || x<=0) velX*=-1; 
+		if(x>=limitX-width || x<=0) velX*=-1; 
 		if(y>limitY) y=limitY;
 		shooting();
 		collision();
@@ -41,8 +43,8 @@ public class Enemy2 extends GameObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					temp.getAttack();
-					getAttack();
+					temp.getHit(getDamage());
+					getHit(temp.getDamage());
 				}
 			}
 		}
@@ -50,7 +52,7 @@ public class Enemy2 extends GameObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer%100==10) new Bullet(x+width/2, y+height, getId(), 1, handler);
+		if(selfTimer%100==10) new Bullet(x+width/2, y+height, getId(), getDamage(), handler);
 	}
 	
 	@Override
@@ -71,8 +73,8 @@ public class Enemy2 extends GameObject {
 	}
 
 	@Override
-	public void getAttack() {
-		hp--;
+	public void getHit(int damage) {
+		hp-=damage;
 		checkShow();
 	}
 

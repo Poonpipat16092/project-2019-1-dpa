@@ -13,10 +13,12 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import object.Enemy1;
 import object.Enemy2;
+import object.Enemy3;
 import object.GameObject;
 import object.ID;
 import object.ObjectHandler;
 import object.Player;
+import object.supplyHealth;
 
 public class GameScreen implements Screen {
 	private Stage primarystage;
@@ -24,11 +26,12 @@ public class GameScreen implements Screen {
 	private GraphicsContext gc;
 	private Pane root;
 	private AnimationTimer timer;
+	private static GameHud hud;
 	private ObjectHandler handler=new ObjectHandler();
 	private int stage=1;
 	private int stageTime=0;
 	
-	private Player player;
+	private static Player player;
 	private boolean[] keyDown;
 	
 	public GameScreen(Stage Primarystage) {
@@ -37,9 +40,8 @@ public class GameScreen implements Screen {
 		gc=canvas.getGraphicsContext2D();
 		
 		
-		//test handler
 		player =new Player(handler);
-		handler.addObject(player);
+		hud=new GameHud(player);
 	
 		
 		root=new Pane();
@@ -56,13 +58,15 @@ public class GameScreen implements Screen {
 		timer=new AnimationTimer() {
 			@Override
 			public void handle(long current) {
-				spawnEnemy();
+				spawn();
 				//reset background
 				gc.setFill(Color.BLACK);
 				gc.fillRect(0, 0, WIDTH, HEIGHT);
 				//handler with object
 				handler.draw(gc);
 				handler.tick();
+				hud.draw(gc);
+				updateHud();
 			}
 		};
 
@@ -117,7 +121,7 @@ public class GameScreen implements Screen {
 
 	}
 	
-	public void spawnEnemy() {
+	public void spawn() {
 		if(stage==1) {
 			if(stageTime%100==0) {
 				Enemy1 enemy = new Enemy1(handler);
@@ -125,8 +129,19 @@ public class GameScreen implements Screen {
 			if(stageTime%200==0) {
 				Enemy2 enemy = new Enemy2(handler);
 			}
+			if(stageTime%250==100) {
+				Enemy3 enemy = new Enemy3(handler);
+			}
+			if(stageTime%500==300) {
+				supplyHealth supply = new supplyHealth(handler);
+			}
 		}
 		stageTime++;
+	}
+	
+	public void updateHud() {
+		handler.removeNotShow();
+		hud.setStage(stage);
 	}
 	
 	@Override
@@ -134,4 +149,13 @@ public class GameScreen implements Screen {
 		draw(gc);
 	}
 
+	public static Player getPlayer() {
+		return player;
+	}
+
+	public static GameHud getHud() {
+		return hud;
+	}
+	
+	
 }
