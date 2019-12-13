@@ -9,6 +9,7 @@ public class Enemy1 extends GameObject {
 	public static final int width=30;
 	public static final int height=30;
 	private int hp;
+	
 	public Enemy1(ObjectHandler handler) {
 		super(random.nextInt(800),random.nextInt(200)-400,ID.Enemy,handler);
 		hp=1;

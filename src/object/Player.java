@@ -13,7 +13,7 @@ public class Player extends GameObject {
 	public static final int height=40;
 	private int hp;
 	private int selfTimer=0;
-	public static final Image image=new Image("file:res/player1.png");
+	public static final Image image=new Image("player1.png");
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
@@ -84,4 +84,5 @@ public class Player extends GameObject {
 		//size of the hit box
 		return new Rectangle(x,y,width, height);
 	}
+	
 }

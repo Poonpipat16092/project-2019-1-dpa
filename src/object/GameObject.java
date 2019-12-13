@@ -1,8 +1,10 @@
 package object;
 
+import java.util.List;
 import java.util.Random;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
@@ -80,6 +82,8 @@ public abstract class GameObject {
 	public Random getRandom() {
 		return random;
 	}
+		
+
 
 	public abstract void getAttack();
 	
