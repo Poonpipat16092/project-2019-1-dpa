@@ -7,7 +7,6 @@ import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
 	
-	protected int hp;
 	protected int x,y;//location
 	protected int velX,velY;//speed per frame
 	protected ID id;
