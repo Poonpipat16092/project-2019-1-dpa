@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.*;
 
 public class StartScreen implements Screen{
@@ -21,6 +22,7 @@ public class StartScreen implements Screen{
 	private Canvas canvas;
 	private GraphicsContext gc;
 	private VBox menu;
+	private static final Font mainFont = new Font("supermarket.ttf", 24);
 	
 	public StartScreen(Stage Primarystage) {
 		canvas=new Canvas(WIDTH, HEIGHT);
@@ -72,10 +74,10 @@ public class StartScreen implements Screen{
 		start.setPrefSize(180, 90);
 		exit.setPrefSize(180, 90);
 		//TODO:add font and color
-//		start.setFont(arg0);
-//		exit.setFont(arg0);
-//		start.setStyle(arg0);
-//		exit.setFont(arg0);
+		start.setFont(mainFont);
+		exit.setFont(mainFont);
+		start.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
+		exit.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px;");
 
 		start.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
