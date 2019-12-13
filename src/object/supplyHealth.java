@@ -2,6 +2,7 @@ package object;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class supplyHealth extends GameObject {
@@ -34,14 +35,12 @@ public class supplyHealth extends GameObject {
 
 	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
 		return 2;
 	}
 
 	@Override
 	public Shape getBounds() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Rectangle(x,y,width,height);
 	}
 
 	@Override
