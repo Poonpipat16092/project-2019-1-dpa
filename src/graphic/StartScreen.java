@@ -1,4 +1,4 @@
-package Graphic;
+package graphic;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

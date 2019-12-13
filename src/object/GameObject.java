@@ -1,23 +1,31 @@
-package Object;
+package object;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
 	
+	protected int hp;
 	protected int x,y;//location
 	protected int velX,velY;//speed per frame
 	protected ID id;
 	protected int limitX;
 	protected int limitY;
+	protected ObjectHandler handler;
+	protected boolean isShow;
 	
-	public GameObject(int x,int y,ID id) {
+	public GameObject(int x,int y,ID id,ObjectHandler handler) {
 		this.x=x;
 		this.y=y;
 		this.id=id;
+		this.handler=handler;
+		this.isShow=true;
 	}
 	
 	public abstract void tick();
 	public abstract void draw(GraphicsContext gc);
+	public abstract int getZ();
+	public abstract Shape getBounds();
 
 	public int getX() {
 		return x;
@@ -58,5 +66,17 @@ public abstract class GameObject {
 	public void setId(ID id) {
 		this.id = id;
 	}
+
+	public boolean isShow() {
+		return isShow;
+	}
+
+	public void setShow(boolean isShow) {
+		this.isShow = isShow;
+	}
+	
+	public abstract void getAttack();
+	
+	public abstract void checkShow();
 
 }

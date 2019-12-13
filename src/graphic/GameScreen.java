@@ -1,9 +1,5 @@
-package Graphic;
+package graphic;
 
-import Object.GameObject;
-import Object.ID;
-import Object.ObjectHandler;
-import Object.Player;
 import javafx.animation.AnimationTimer;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -15,6 +11,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import object.Enemy1;
+import object.Enemy2;
+import object.GameObject;
+import object.ID;
+import object.ObjectHandler;
+import object.Player;
 
 public class GameScreen implements Screen {
 	private Stage primarystage;
@@ -22,7 +24,9 @@ public class GameScreen implements Screen {
 	private GraphicsContext gc;
 	private Pane root;
 	private AnimationTimer timer;
-	private ObjectHandler handler;
+	private ObjectHandler handler=new ObjectHandler();
+	private int stage=1;
+	private int stageTime=0;
 	
 	private Player player;
 	private boolean[] keyDown;
@@ -34,10 +38,9 @@ public class GameScreen implements Screen {
 		
 		
 		//test handler
-		handler =new ObjectHandler();
-		player =new Player(100,100,ID.Player);
+		player =new Player(100,100,handler);
 		handler.addObject(player);
-		
+	
 		
 		root=new Pane();
 		root.setPrefSize(WIDTH, HEIGHT);
@@ -54,13 +57,14 @@ public class GameScreen implements Screen {
 
 		timer=new AnimationTimer() {
 			@Override
-			public void handle(long arg0) {
+			public void handle(long current) {
+				spawnEnemy();
 				//reset background
 				gc.setFill(Color.BLACK);
 				gc.fillRect(0, 0, WIDTH, HEIGHT);
 				//handler with object
-				handler.tick();
 				handler.draw(gc);
+				handler.tick();
 			}
 		};
 
@@ -114,6 +118,19 @@ public class GameScreen implements Screen {
 		});
 
 	}
+	
+	public void spawnEnemy() {
+		if(stage==1) {
+			if(stageTime%100==0) {
+				Enemy1 enemy = new Enemy1(100, 0, handler);
+			}
+			if(stageTime%200==0) {
+				Enemy2 enemy = new Enemy2(400,0,handler);
+			}
+		}
+		stageTime++;
+	}
+	
 	@Override
 	public void startAnimation() {
 		draw(gc);
