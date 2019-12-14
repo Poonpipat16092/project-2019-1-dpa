@@ -16,6 +16,7 @@ public class supplyBarrier extends GameObject {
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
+		//
 	}
 
 	@Override

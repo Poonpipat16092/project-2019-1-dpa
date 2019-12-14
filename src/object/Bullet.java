@@ -42,7 +42,9 @@ public class Bullet extends GameObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		if(id==ID.Player) gc.setFill(Color.AZURE);
+		if(id==ID.Player) {
+			gc.drawImage(playerLaser, x, y);
+		}
 		if(id==ID.Enemy) gc.setFill(Color.RED);
 		gc.fillRect(x, y, width, heigth);
 	}
