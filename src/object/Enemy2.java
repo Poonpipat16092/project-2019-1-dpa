@@ -52,7 +52,7 @@ public class Enemy2 extends GameObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer%100==10) new Bullet(x+width/2, y+height, getId(), getDamage(), handler);
+		if(selfTimer%100==10) new Bullet(x+width/2, y+height,0,7, getId(), getDamage(), handler);
 	}
 	
 	@Override
@@ -68,7 +68,7 @@ public class Enemy2 extends GameObject {
 	}
 
 	@Override
-	public Shape getBounds() {
+	public Rectangle getBounds() {
 		return new Rectangle(x,y,width,height);
 	}
 

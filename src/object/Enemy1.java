@@ -85,7 +85,7 @@ public class Enemy1 extends GameObject {
 		velY=8;
 	}
 	
-	public Shape getBounds() {
+	public Rectangle getBounds() {
 		return new Rectangle(x,y,width,height);
 	}
 	

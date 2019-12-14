@@ -6,6 +6,7 @@ import java.util.Random;
 import graphic.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public abstract class GameObject {

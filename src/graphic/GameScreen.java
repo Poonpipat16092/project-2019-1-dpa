@@ -20,6 +20,7 @@ import object.ID;
 import object.ObjectHandler;
 import object.Player;
 import object.supplyBarrier;
+import object.supplyBullet;
 import object.supplyHealth;
 
 public class GameScreen implements Screen {
@@ -157,6 +158,9 @@ public class GameScreen implements Screen {
 		if(stage==2) {
 			if(stageTime==100) {
 				Boss boss=new Boss(handler);
+			}
+			if(stageTime%200==10) {
+				supplyBullet supply=new supplyBullet(handler);
 			}
 		}
 		stageTime++;

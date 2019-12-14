@@ -50,7 +50,7 @@ public class supplyHealth extends GameObject {
 	}
 
 	@Override
-	public Shape getBounds() {
+	public Rectangle getBounds() {
 		return new Rectangle(x,y,width,height);
 	}
 

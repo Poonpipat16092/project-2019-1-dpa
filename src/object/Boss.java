@@ -10,9 +10,11 @@ public class Boss extends GameObject {
 	public static final int width=400;
 	public static final int height=100;
 	private int hp;
+	private boolean timerStart=false;
+	private boolean ultimate=false;
 	public int selfTimer=0;
 	public Boss(ObjectHandler handler) {
-		super(200,-100,ID.Enemy,handler);
+		super(200,-100,ID.Boss,handler);
 		setDamage(2);
 		setScore(10000);
 		hp=1000;
@@ -31,7 +33,7 @@ public class Boss extends GameObject {
 		setupSpeed();
 		shooting();
 		collision();
-		selfTimer++;
+		if(timerStart) selfTimer++;
 	}
 
 	public void collision() {
@@ -47,7 +49,33 @@ public class Boss extends GameObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer%100==10) new Bullet(x+width/2, y+height, getId(), getDamage(), handler);
+		if(selfTimer>=1200) {
+			ultimate=false;
+			selfTimer=0;
+		}
+		if(ultimate==true && selfTimer%20==10) {
+//			new BossBullet(x+width/3, y+height, getDamage(), handler,0);
+//			new BossBullet(x+width/3*2, y+height, getDamage(), handler,0);
+//			new BossBullet(x+width/3, y+height, getDamage(), handler,1);
+//			new BossBullet(x+width/3*2, y+height, getDamage(), handler,-1);
+			new Bullet(x+width/6, y+height, 0, 10, id,getDamage(), handler);
+ 			new Bullet(x+width/3, y+height, 0, 10, id, getDamage(), handler);
+			new Bullet(x+width/6*5, y+height, 0, 10, id, getDamage(), handler);
+			new Bullet(x+width/3*2, y+height, 0, 10, id, getDamage(), handler);
+			return;
+		}
+		if(ultimate==true) return;
+		if(selfTimer>=1000) {
+			ultimate=true;
+			new LaserBeam(this,handler);
+			return;
+		}
+		if(selfTimer%80==10) {
+			new BossBullet(x+width/2, y+height, getDamage(), handler,0);
+			new BossBullet(x+width/2, y+height, getDamage(), handler,1);
+			new BossBullet(x+width/2, y+height, getDamage(), handler,2);
+			return;
+		}
 	}
 	
 	@Override
@@ -66,6 +94,7 @@ public class Boss extends GameObject {
 		if(y>=limitY && velY==2 && velX==0) {
 			velY=0;
 			velX=2;
+			timerStart=true;
 			return;
 		}
 		if(x<=0 || x>=400) {
@@ -80,7 +109,7 @@ public class Boss extends GameObject {
 	}
 
 	@Override
-	public Shape getBounds() {
+	public Rectangle getBounds() {
 		return new Rectangle(x,y,width,height);
 	}
 

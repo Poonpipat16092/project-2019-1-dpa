@@ -1,59 +1,61 @@
 package object;
 
-
-import graphic.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Enemy3 extends GameObject {
-	public static final int width=40;
-	public static final int height=40;
-	public static final double speed=4;
-	public int hp;
-	private Image image;
+public class supplyBullet extends GameObject {
+	public static final int width=20;
+	public static final int height=20;
+	private int mode;
 	
-	public Enemy3(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler);
-		setDamage(1);
-		setScore(50);
-		hp=1;
+	public supplyBullet(ObjectHandler handler){
+		super(random.nextInt(780)+20,random.nextInt(200)-400,ID.Supply,handler);
+		mode=random.nextInt(2);
+		velX=0;
+		velY=2;
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
+		//
 	}
 
 	@Override
 	public void tick() {
+		checkShow();
 		if(isShow()==false) return;
-		x+=speed*cos();
-		y+=speed*sin();
+		y+=velY;
 		collosion();
 	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		if(isShow()==false) return;
-		gc.setFill(Color.PURPLE);
-		gc.fillRect(x, y, width , height);
+		if(!isShow) return;
+		if(mode==0) {
+			gc.setFill(Color.BLUE);
+			gc.fillRect(x, y, width, height);
+		}
+		if(mode==1) {
+			gc.setFill(Color.GREEN);
+			gc.fillRect(x, y, width, height);
+		}
 	}
 	
 	public void collosion() {
 		for(GameObject temp:handler.getObjects()) {
-			if(temp.getId()==ID.Player) {
+			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					temp.getHit(getDamage());
-					getHit(temp.getDamage());
+					((Player) temp).setMode(mode);
+					setShow(false);
 				}
 			}
 		}
 	}
-		
+
 	@Override
 	public int getZ() {
-		return 1;
+		return 2;
 	}
 
 	@Override
@@ -63,13 +65,15 @@ public class Enemy3 extends GameObject {
 
 	@Override
 	public void getHit(int damage) {
-		hp-=damage;
-		checkShow();
+		setShow(false);
 	}
 
 	@Override
 	public void checkShow() {
-		if(hp<=0) setShow(false);
+		if(x<-50 || x>limitX) {
+			this.setShow(false);
+			return;
+		}
 		if(y>limitY) {
 			this.setShow(false);
 			return;
