@@ -18,6 +18,7 @@ import object.GameObject;
 import object.ID;
 import object.ObjectHandler;
 import object.Player;
+import object.supplyBarrier;
 import object.supplyHealth;
 
 public class GameScreen implements Screen {
@@ -123,6 +124,7 @@ public class GameScreen implements Screen {
 	
 	public void spawn() {
 		if(stage==1) {
+			
 			if(stageTime%100==0) {
 				Enemy1 enemy = new Enemy1(handler);
 			}
@@ -135,6 +137,10 @@ public class GameScreen implements Screen {
 			if(stageTime%500==300) {
 				supplyHealth supply = new supplyHealth(handler);
 			}
+			if(stageTime%500==300) {
+				supplyBarrier supply = new supplyBarrier(handler);
+			}
+
 		}
 		stageTime++;
 	}

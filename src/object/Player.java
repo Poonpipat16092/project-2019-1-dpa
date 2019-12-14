@@ -12,6 +12,7 @@ public class Player extends GameObject {
 	public static final int width=60;
 	public static final int height=60;
 	private int hp;
+	private boolean barrierOn;
 	private int selfTimer=0;
 	public static final Image image=new Image("player1.png",width,height,true,true);
 
@@ -19,6 +20,7 @@ public class Player extends GameObject {
 		super(400,500,ID.Player,handler);
 		setDamage(1);
 		hp=5;
+		barrierOn=false;
 		velX=0;
 		velY=0;
 		limitX=800;
@@ -59,7 +61,8 @@ public class Player extends GameObject {
 	}
 	
 	public void getHit(int damage) {
-		hp-=damage;
+		if(barrierOn) barrierOn=false;
+		else hp-=damage;
 		checkShow();
 	}
 	
@@ -72,6 +75,10 @@ public class Player extends GameObject {
 		if(!isShow) return;
 		gc.setFill(Color.WHITE);
 		gc.fillRect(x, y, width, height);
+		if(barrierOn) {
+			gc.setFill(Color.BLUE);
+			gc.fillOval(x, y, height, height);
+		}
 		gc.drawImage(image, x, y);
 		//check hp
 	}
@@ -92,5 +99,7 @@ public class Player extends GameObject {
 		//size of the hit box
 		return new Rectangle(x,y,width, height);
 	}
-	
+	public void setBarrier(boolean on) {
+		barrierOn=on;
+	}
 }
