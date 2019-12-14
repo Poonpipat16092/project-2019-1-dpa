@@ -7,7 +7,7 @@ import object.Player;
 
 public class GameHud {
 	private int stage;
-	private int score;
+	private static int score;
 	private Player player;
 	
 	public GameHud(Player player) {
@@ -30,5 +30,9 @@ public class GameHud {
 	
 	public void addScore(int score) {
 		this.score+=score;
+	}
+	
+	public int getScore() {
+		return score;
 	}
 }

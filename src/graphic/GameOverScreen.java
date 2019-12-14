@@ -17,10 +17,16 @@ public class GameOverScreen implements Screen {
 	private static final Font GAME_OVER_FONT = new Font("supermarket.ttf", 24);
 //	private static final Image GAME_OVER_SENCE = new Image("");
 	
+	
+	
 	@Override
 	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 //		gc.drawImage(background, 0, 0);
+		//temporary backgroud
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, WIDTH, HEIGHT);
+		//
 		gc.setFont(GAME_OVER_FONT);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
