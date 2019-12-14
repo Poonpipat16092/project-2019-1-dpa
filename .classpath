@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="res/image"/>
 	<classpathentry kind="src" path="res/font"/>
-	<classpathentry excluding="image/|font/" kind="src" path="res"/>
+	<classpathentry excluding="image/|font/|image/" kind="src" path="res"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>

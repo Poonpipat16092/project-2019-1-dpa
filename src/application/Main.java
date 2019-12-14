@@ -5,6 +5,7 @@ import graphic.StartScreen;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import graphic.SelectPlayerScreen;
 
 public class Main extends Application {
 
@@ -18,6 +19,8 @@ public class Main extends Application {
 		startScreen.startAnimation();
 //		GameOverScreen end = new GameOverScreen(primarystage);
 //		end.startAnimation();
+//		SelectPlayerScreen selectedPlayer = new SelectPlayerScreen(primarystage);
+//		selectedPlayer.startAnimation();
 		primarystage.show();
 	}
 
