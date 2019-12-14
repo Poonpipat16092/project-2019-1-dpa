@@ -34,6 +34,7 @@ public class GameScreen implements Screen {
 	
 	private static Player player;
 	private boolean[] keyDown;
+	private boolean pause = false ;
 	
 	public GameScreen(Stage Primarystage) {
 		primarystage=Primarystage;
@@ -100,6 +101,15 @@ public class GameScreen implements Screen {
 				if(key.getCode()==KeyCode.D) {
 					player.setVelX(5);
 					keyDown[2]=true;
+				}
+				if(key.getCode()==KeyCode.ESCAPE && pause == false) {
+					pause = true ;
+					timer.stop();
+					PauseScreen.draw(gc);
+				}
+				if(key.getCode()==KeyCode.SPACE && pause) {
+					timer.start();
+					pause = false ;
 				}
 			}
 			
