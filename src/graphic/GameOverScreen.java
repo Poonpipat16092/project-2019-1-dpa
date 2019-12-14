@@ -22,7 +22,7 @@ public class GameOverScreen implements Screen {
 	private Canvas canvas ;
 	private static final Font mainFont = new Font("supermarket.ttf", 24);
 	private static final Font GAME_OVER_FONT = new Font("supermarket.ttf", 100);
-	private static final Image image = new Image("Boom.png",100,100,true,true);
+	private static final Image image = new Image("Boom.png",200,200,true,true);
 //	private static final Image GAME_OVER_SENCE = new Image("");
 	
 	public GameOverScreen(Stage primarystage) {
@@ -53,12 +53,12 @@ public class GameOverScreen implements Screen {
 		//Press Enter
 		gc.setFont(mainFont);
 		gc.setFill(Color.AQUAMARINE);
-		gc.fillText("Press ENTER ", 350, 400);
+		gc.fillText("Press ENTER ", 330, 400);
 		//Score 
 		gc.setFill(Color.WHITE);
 		gc.fillText("SCORE : " + score, 350, 150);
 		
-		gc.drawImage(image, 100, 100);
+		gc.drawImage(image, 300, 180);
 		
 		root.getChildren().add(canvas);
 		Scene scene = new Scene(root);
