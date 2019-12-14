@@ -81,8 +81,8 @@ public class StartScreen implements Screen{
 
 		start.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
-				GameScreen game=new GameScreen(primarystage);
-				game.startAnimation();
+				SelectPlayerScreen selectedPlayer = new SelectPlayerScreen(primarystage);
+				selectedPlayer.startAnimation();
 				
 			}
 		});
