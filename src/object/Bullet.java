@@ -2,13 +2,17 @@ package object;
 
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Bullet extends GameObject {
-	public static final int width=50;
+	public static final int width=4;
 	public static final int heigth=10;
+	public static final Image playerLaser=new Image("laserGreen.png",width,heigth,true,true);
+	public static final Image enemyLaser=new Image("laserRed.png",width,heigth,true,true);
+	
 	
 	public Bullet(double x,double y,ID id,int damage,ObjectHandler handler) {
 		super(x, y, id, handler);
