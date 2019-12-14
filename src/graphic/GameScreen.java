@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import object.Boss;
 import object.Enemy1;
 import object.Enemy2;
 import object.Enemy3;
@@ -29,7 +30,7 @@ public class GameScreen implements Screen {
 	private AnimationTimer timer;
 	private static GameHud hud;
 	private ObjectHandler handler=new ObjectHandler();
-	private int stage=1;
+	private int stage=2;
 	private int stageTime=0;
 	
 	private static Player player;
@@ -152,6 +153,11 @@ public class GameScreen implements Screen {
 				supplyBarrier supply = new supplyBarrier(handler);
 			}
 
+		}
+		if(stage==2) {
+			if(stageTime==100) {
+				Boss boss=new Boss(handler);
+			}
 		}
 		stageTime++;
 	}
