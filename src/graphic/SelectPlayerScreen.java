@@ -64,7 +64,7 @@ public class SelectPlayerScreen implements Screen {
 		
 		Scene scene = new Scene(root);
 		primarystage.setScene(scene);
-		root.getChildren().addAll(player,start);
+		root.getChildren().addAll(start,player);
 		
 		
 		
