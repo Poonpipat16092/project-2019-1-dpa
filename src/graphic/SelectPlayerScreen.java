@@ -1,7 +1,5 @@
 package graphic;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -16,7 +14,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -33,7 +30,6 @@ public class SelectPlayerScreen implements Screen {
 	private Canvas canvas ;
 	private HBox player,start;
 	private String selectedPlayer ;
-	private ObservableList<Button> playerButtonList = FXCollections.observableArrayList();
 	
 	
 	public SelectPlayerScreen(Stage primarystage) {
@@ -155,6 +151,12 @@ public class SelectPlayerScreen implements Screen {
 		player.getChildren().addAll(player1,player2);
 		start.getChildren().addAll(startButton);
 		
+	}
+	/**
+	 * @return the selectedPlayer
+	 */
+	public String getSelectedPlayer() {
+		return selectedPlayer;
 	}
 
 }
