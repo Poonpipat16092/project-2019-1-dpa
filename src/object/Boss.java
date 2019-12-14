@@ -35,7 +35,6 @@ public class Boss extends GameObject {
 	}
 
 	public void collision() {
-		//when being hit //can minimize round with getZ to only check some Z
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
