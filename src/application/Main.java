@@ -14,10 +14,10 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primarystage) throws Exception {
-//		StartScreen startScreen = new StartScreen(primarystage);
-//		startScreen.startAnimation();
-		GameOverScreen end = new GameOverScreen(primarystage);
-		end.startAnimation();
+		StartScreen startScreen = new StartScreen(primarystage);
+		startScreen.startAnimation();
+//		GameOverScreen end = new GameOverScreen(primarystage);
+//		end.startAnimation();
 		primarystage.show();
 	}
 
