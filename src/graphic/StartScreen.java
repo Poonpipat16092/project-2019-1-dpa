@@ -83,6 +83,7 @@ public class StartScreen implements Screen{
 			public void handle(ActionEvent arg0) {
 				GameScreen game=new GameScreen(primarystage);
 				game.startAnimation();
+				
 			}
 		});
 		

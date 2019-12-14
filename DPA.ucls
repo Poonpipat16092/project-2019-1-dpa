@@ -21,7 +21,7 @@
   </class>  
   <enumeration id="3" language="java" name="object.ID" project="DPA" file="/DPA/src/object/ID.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="124" width="144" x="218" y="-89"/>    
+    <position height="-1" width="-1" x="266" y="-197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </enumeration>  
   <class id="4" language="java" name="application.Main" project="DPA" file="/DPA/src/application/Main.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="130" x="402" y="-89"/>    
+    <position height="-1" width="-1" x="467" y="-205"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <interface id="5" language="java" name="graphic.Screen" project="DPA" file="/DPA/src/graphic/Screen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="184" x="1484" y="542"/>    
+    <position height="-1" width="-1" x="1473" y="290"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </interface>  
   <class id="6" language="java" name="object.ObjectHandler" project="DPA" file="/DPA/src/object/ObjectHandler.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="255" x="572" y="-89"/>    
+    <position height="-1" width="-1" x="698" y="-153"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,16 +57,16 @@
   </class>  
   <class id="7" language="java" name="object.GameObject" project="DPA" file="/DPA/src/object/GameObject.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="591" width="241" x="867" y="-89"/>    
+    <position height="-1" width="-1" x="987" y="104"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="graphic.GameOverScreem" project="DPA" file="/DPA/src/graphic/GameOverScreem.java" 
+  <class id="8" language="java" name="graphic.GameOverScreen" project="DPA" file="/DPA/src/graphic/GameOverScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="184" x="1148" y="-89"/>    
+    <position height="-1" width="-1" x="1240" y="-160"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="graphic.PauseScreen" project="DPA" file="/DPA/src/graphic/PauseScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="184" x="1372" y="-89"/>    
+    <position height="-1" width="-1" x="1452" y="-148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="graphic.StartScreen" project="DPA" file="/DPA/src/graphic/StartScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="184" x="1596" y="-89"/>    
+    <position height="-1" width="-1" x="1667" y="-148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,45 +111,54 @@
   </class>  
   <class id="13" language="java" name="graphic.GameScreen" project="DPA" file="/DPA/src/graphic/GameScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="340" width="184" x="1820" y="-89"/>    
+    <position height="-1" width="-1" x="1879" y="-55"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="14">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
+  <class id="14" language="java" name="graphic.GameHud" project="DPA" file="/DPA/src/graphic/GameHud.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="251" y="261"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <generalization id="15">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <realization id="16">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <realization id="18">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <generalization id="19">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <realization id="20">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <generalization id="21">    
+  <generalization id="16">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="17">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
+  <generalization id="18">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <realization id="19">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="20">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="22">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
