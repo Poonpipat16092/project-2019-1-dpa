@@ -113,9 +113,9 @@ public class SelectPlayerScreen implements Screen {
 			@Override
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
-				if(selectedPlayer != "Player1" ) {
+				if(selectedPlayer != "Player2" ) {
 					player2.setStyle("-fx-background-color: #7FFFD4; ");
-					selectedPlayer = "Player1";
+					selectedPlayer = "Player2";
 					player1.setStyle("-fx-background-color: #000000; ");
 				}
 			}
@@ -140,6 +140,7 @@ public class SelectPlayerScreen implements Screen {
 				if(selectedPlayer == "") {
 					Alert alert = new Alert(AlertType.INFORMATION,"Please Select Player");
 					alert.showAndWait();
+					
 					return;
 				}
 				else {
