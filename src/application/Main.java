@@ -1,7 +1,9 @@
 package application;
 
+import graphic.GameOverScreen;
 import graphic.StartScreen;
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -12,8 +14,10 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primarystage) throws Exception {
-		StartScreen startScreen = new StartScreen(primarystage);
-		startScreen.startAnimation();
+//		StartScreen startScreen = new StartScreen(primarystage);
+//		startScreen.startAnimation();
+		GameOverScreen end = new GameOverScreen(primarystage);
+		end.startAnimation();
 		primarystage.show();
 	}
 
