@@ -69,6 +69,7 @@ public class GameScreen implements Screen {
 				handler.tick();
 				hud.draw(gc);
 				updateHud();
+				isGameOver();
 			}
 		};
 
@@ -164,6 +165,14 @@ public class GameScreen implements Screen {
 	public void startAnimation() {
 		draw(gc);
 	}
+	
+	public void isGameOver() {
+		if(!player.isShow()) {
+			timer.stop();
+			GameOverScreen end = new GameOverScreen(primarystage);
+			end.startAnimation();
+		}
+	}
 
 	public static Player getPlayer() {
 		return player;
@@ -172,6 +181,7 @@ public class GameScreen implements Screen {
 	public static GameHud getHud() {
 		return hud;
 	}
+	
 	
 	
 }

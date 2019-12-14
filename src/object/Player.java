@@ -1,6 +1,7 @@
 package object;
 
 
+import graphic.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -84,7 +85,9 @@ public class Player extends GameObject {
 	}
 		
 	public void checkShow() {
-		if(hp<=0) setShow(false);
+		if(hp<=0) {
+			setShow(false);
+		}
 	}
 
 	public int getZ() {
