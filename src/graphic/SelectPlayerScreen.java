@@ -23,7 +23,7 @@ public class SelectPlayerScreen implements Screen {
 	public static final Image Player1 = new Image("player1.png",100,100,true,true);
 	public static final Image Player2 = new Image("player2.png",100,100,true,true);
 	public static final Font SELECT_PLAYER = new Font("supermarket.ttf", 75);
-	public static final Font START = new Font("supermarket.ttf", 20);
+	public static final Font NORMAL = new Font("supermarket.ttf", 35);
 	private Button player1,player2,startButton;
 	private Stage primarystage ;
 	private GraphicsContext gc ;
@@ -54,7 +54,11 @@ public class SelectPlayerScreen implements Screen {
 		gc.setFont(SELECT_PLAYER);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
-		gc.fillText("Select Player", 150, 100);
+		gc.fillText("Select Player", 188, 100);
+		
+		gc.setFont(NORMAL);
+		gc.fillText("Player 1", 200, 350);
+		gc.fillText("Player 2", 485, 350);
 		
 		root.getChildren().add(canvas);
 		
@@ -76,18 +80,18 @@ public class SelectPlayerScreen implements Screen {
 		this.player = new HBox();
 		player.setPrefWidth(800);
 		player.setPrefHeight(400);
-		player.setSpacing(50);
-		player.setPadding(new Insets(10,10,10,10));//up,right
+		player.setSpacing(100);
+		player.setPadding(new Insets(50,15,10,10));
 		player.setAlignment(Pos.CENTER);
 		
 		
-		player1 = new Button("Player1");
+		player1 = new Button();
 		player1.setGraphic(new ImageView(Player1));
-		player1.setPrefSize(100,100);
+		player1.setPrefSize(200,150);
 		
-		player2 = new Button("Player2");
+		player2 = new Button();
 		player2.setGraphic(new ImageView(Player2));
-		player2.setPrefSize(100, 100);
+		player2.setPrefSize(200, 150);
 		
 		player1.setStyle("-fx-background-color: #000000;");
 		player2.setStyle("-fx-background-color: #000000;");
@@ -121,12 +125,13 @@ public class SelectPlayerScreen implements Screen {
 		start.setPrefWidth(800);
 		start.setPrefHeight(100);
 		start.setSpacing(50);
-		start.setPadding(new Insets(400,10,10,10));//up,right
+		start.setPadding(new Insets(400,15,10,10)); //down 400 
 		start.setAlignment(Pos.BOTTOM_CENTER);
 		
-		startButton = new Button("start");
-		startButton.setPrefSize(100, 100);
-		startButton.setFont(START);
+		startButton = new Button("PLAY!");
+		startButton.setPrefSize(150, 150);
+		startButton.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
+		startButton.setFont(NORMAL);
 		
 		startButton.setOnAction(new EventHandler<ActionEvent>() {
 			
