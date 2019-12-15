@@ -8,7 +8,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class BossBullet extends GameObject {
+public class BossBullet extends BulletObject {
 	public static final int width=20;
 	public static final int height=20;
 	public int state;
@@ -60,11 +60,7 @@ public class BossBullet extends GameObject {
 	public void getHit(int damage) {
 		checkShow();
 	}
-	
-	public int getDamage() {
-		return damage;
-	}
-	
+		
 	public void setVel() {
 		if(state==0) {
 			velY=6;

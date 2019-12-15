@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Enemy1 extends GameObject {
+public class Enemy1 extends BattleshipObject {
 	public static final int width=50;
 	public static final int height=50;
 	private int hp;
@@ -51,7 +51,7 @@ public class Enemy1 extends GameObject {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
 					temp.getHit(getDamage());
-					getHit(temp.getDamage());
+					getHit(((Damagable) temp).getDamage());
 				}
 			}
 		}

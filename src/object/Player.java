@@ -9,7 +9,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Player extends GameObject {
+public class Player extends BattleshipObject {
 	public static final int width=60;
 	public static final int height=60;
 	private int hp;
@@ -55,11 +55,11 @@ public class Player extends GameObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Enemy || temp.getId()==ID.Boss) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					getHit(temp.getDamage());
+					getHit(((Damagable) temp).getDamage());
 					temp.getHit(getDamage());
 				}
 				else if(getBounds2().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow) {
-					getHit(temp.getDamage());
+					getHit(((Damagable) temp).getDamage());
 					temp.getHit(getDamage());
 				}
 			}

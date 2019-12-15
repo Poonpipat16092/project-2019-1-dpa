@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class LaserBeam extends GameObject {
+public class LaserBeam extends BulletObject {
 	public static final int width=100;
 	public static final int height=700;
 	private Boss boss;
@@ -53,10 +53,6 @@ public class LaserBeam extends GameObject {
 	
 	public void getHit(int damage) {
 		checkShow();
-	}
-	
-	public int getDamage() {
-		return damage;
 	}
 		
 	public void checkShow() {

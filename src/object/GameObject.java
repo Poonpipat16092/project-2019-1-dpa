@@ -13,14 +13,13 @@ public abstract class GameObject {
 	
 	protected double x,y;//location
 	protected int velX,velY;//speed per frame
-	protected int damage;
 	protected ID id;
 	protected int limitX;
 	protected int limitY;
 	protected ObjectHandler handler;
 	protected boolean isShow;
 	protected int score=0;
-	public static Random random=new Random();
+	public static final Random random=new Random();
 	
 	public GameObject(double x,double y,ID id,ObjectHandler handler) {
 		this.x=x;
@@ -29,37 +28,15 @@ public abstract class GameObject {
 		this.handler=handler;
 		this.isShow=true;
 	}
-	
-	public double cos() {
-		double kam=GameScreen.getPlayer().getY()-y;
-		double chid=GameScreen.getPlayer().getX()-x;
-		double chack=Math.sqrt((kam*kam)+(chid*chid));
-		double cos=chid/chack;
-		return cos;
-	}
-	
-	public double sin() {
-		double kam=GameScreen.getPlayer().getY()-y;
-		double chid=GameScreen.getPlayer().getX()-x;
-		double chack=Math.sqrt((kam*kam)+(chid*chid));
-		double sin=kam/chack;
-		return sin;
-	}
-
-	
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
-
 	public abstract void tick();
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
 	public abstract Shape getBounds();
+	public abstract void getHit(int damage);
+	public abstract void checkShow();
+	
 
+	
 	public double getX() {
 		return x;
 	}
@@ -120,10 +97,4 @@ public abstract class GameObject {
 		return score;
 	}
 		
-
-
-	public abstract void getHit(int damage);
-	
-	public abstract void checkShow();
-
 }

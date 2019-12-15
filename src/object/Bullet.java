@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Bullet extends GameObject {
+public class Bullet extends BulletObject {
 	public static final int width=10;
 	public static final int heigth=20;
 	public static final Image playerLaser=new Image("laserBlue02.png",width,heigth,true,true);
@@ -21,7 +21,7 @@ public class Bullet extends GameObject {
 		limitY=700;
 		limitX=900;
 		setVel(velX,velY);
-		this.damage=damage;
+		setDamage(damage);;
 		handler.addObject(this);
 	}
 	
@@ -44,7 +44,7 @@ public class Bullet extends GameObject {
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(id==ID.Player) {
-			if(damage==2) {
+			if(getDamage()==2) {
 				gc.drawImage(playerLaser2, x, y);
 			}
 			else gc.drawImage(playerLaser, x, y);
@@ -68,11 +68,7 @@ public class Bullet extends GameObject {
 	public void getHit(int damage) {
 		checkShow();
 	}
-	
-	public int getDamage() {
-		return damage;
-	}
-	
+		
 	public void setVel(int velX,int velY) {
 		this.velX=velX;
 		this.velY=velY;

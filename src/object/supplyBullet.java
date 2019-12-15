@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyBullet extends GameObject {
+public class supplyBullet extends SupplyObject {
 	public static final int width=20;
 	public static final int height=20;
 	private int mode;
@@ -18,7 +18,7 @@ public class supplyBullet extends GameObject {
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
-		//
+
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class supplyBullet extends GameObject {
 		checkShow();
 		if(isShow()==false) return;
 		y+=velY;
-		collosion();
+		collision();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class supplyBullet extends GameObject {
 		}
 	}
 	
-	public void collosion() {
+	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){

@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyHealth extends GameObject {
+public class supplyHealth extends SupplyObject {
 	public static final int width=20;
 	public static final int height=20;
 	
@@ -23,7 +23,7 @@ public class supplyHealth extends GameObject {
 		checkShow();
 		if(isShow()==false) return;
 		y+=velY;
-		collosion();
+		collision();
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class supplyHealth extends GameObject {
 		gc.fillRect(x, y, width, height);
 	}
 	
-	public void collosion() {
+	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
