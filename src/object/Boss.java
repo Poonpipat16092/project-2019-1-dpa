@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Boss extends GameObject {
+public class Boss extends BattleshipObject {
 	public static final int width=400;
 	public static final int height=100;
 	private int hp;
@@ -17,7 +17,7 @@ public class Boss extends GameObject {
 		super(200,-100,ID.Boss,handler);
 		setDamage(2);
 		setScore(10000);
-		hp=1000;
+		hp=300;
 		setupSpeed();
 		limitX=800;
 		limitY=0;
@@ -41,7 +41,7 @@ public class Boss extends GameObject {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
 					temp.getHit(getDamage());
-					getHit(temp.getDamage());
+					getHit(((Damagable) temp).getDamage());
 				}
 			}
 		}

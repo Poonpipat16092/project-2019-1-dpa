@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyBullet extends GameObject {
+public class supplyBullet extends SupplyObject {
 	public static final int width=20;
 	public static final int height=20;
 	private int mode;
