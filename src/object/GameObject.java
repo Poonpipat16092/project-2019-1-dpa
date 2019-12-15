@@ -34,6 +34,7 @@ public abstract class GameObject {
 	public abstract Shape getBounds();
 	public abstract void getHit(int damage);
 	public abstract void checkShow();
+	
 
 	
 	public double getX() {

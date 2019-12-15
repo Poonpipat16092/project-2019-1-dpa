@@ -30,7 +30,7 @@ public class Enemy3 extends BattleshipObject {
 		if(isShow()==false) return;
 		x+=speed*cos();
 		y+=speed*sin();
-		collosion();
+		collision();
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class Enemy3 extends BattleshipObject {
 		gc.fillRect(x, y, width , height);
 	}
 	
-	public void collosion() {
+	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){

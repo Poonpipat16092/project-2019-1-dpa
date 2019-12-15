@@ -18,7 +18,7 @@ public class supplyBullet extends SupplyObject {
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
-		//
+
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class supplyBullet extends SupplyObject {
 		checkShow();
 		if(isShow()==false) return;
 		y+=velY;
-		collosion();
+		collision();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class supplyBullet extends SupplyObject {
 		}
 	}
 	
-	public void collosion() {
+	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){

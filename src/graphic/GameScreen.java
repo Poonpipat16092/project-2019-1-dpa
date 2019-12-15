@@ -74,9 +74,6 @@ public class GameScreen implements Screen {
 				updateHud();
 				isGameOver();
 				nextStage();
-				gc.setFill(Color.ANTIQUEWHITE);
-				gc.setFont(new Font(20));
-				gc.fillText("stageTimer : "+stageTime, 500, 580);
 			}
 		};
 
@@ -159,6 +156,10 @@ public class GameScreen implements Screen {
 			if(stageTime%500==300) {
 				supplyBarrier supply = new supplyBarrier(handler);
 			}
+			if(stageTime%700==300) {
+				supplyBullet supply = new supplyBullet(handler);
+			}
+
 
 		}
 		if(stage==2) {
@@ -175,6 +176,10 @@ public class GameScreen implements Screen {
 			if(stageTime%500==300) {
 				supplyBarrier supply = new supplyBarrier(handler);
 			}
+			if(stageTime%700==300) {
+				supplyBullet supply = new supplyBullet(handler);
+			}
+
 			
 		}
 		if(stage==3) {

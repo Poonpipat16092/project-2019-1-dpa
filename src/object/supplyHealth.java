@@ -23,7 +23,7 @@ public class supplyHealth extends SupplyObject {
 		checkShow();
 		if(isShow()==false) return;
 		y+=velY;
-		collosion();
+		collision();
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class supplyHealth extends SupplyObject {
 		gc.fillRect(x, y, width, height);
 	}
 	
-	public void collosion() {
+	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){

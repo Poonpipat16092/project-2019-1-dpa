@@ -8,8 +8,8 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 	protected int damage;
 	protected int score=0;
 	private int hp;
-
 	
+	public abstract void collision();
 	public BattleshipObject(double x,double y,ID id,ObjectHandler handler) {
 		super(x,y,id,handler);
 		
