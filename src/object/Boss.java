@@ -2,6 +2,7 @@ package object;
 
 import java.util.Random;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -9,6 +10,8 @@ import javafx.scene.shape.Shape;
 public class Boss extends BattleshipObject {
 	public static final int width=400;
 	public static final int height=100;
+	public static final Image bossCharging=new Image("laserRedShot.png", width, height, false, true);
+	public static final Image boss=new Image("Boss.png", width, height, false, true);
 	private int hp;
 	private boolean timerStart=false;
 	private boolean ultimate=false;
@@ -81,8 +84,8 @@ public class Boss extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.setFill(Color.ROYALBLUE);
-		gc.fillRect(x, y, width, height);
+		if(selfTimer>=800) gc.drawImage(bossCharging, x, y);
+		gc.drawImage(boss, x, y);
 	}
 
 	public void setupSpeed() {

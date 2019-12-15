@@ -1,6 +1,7 @@
 package object;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -8,7 +9,10 @@ import javafx.scene.shape.Shape;
 public class supplyBullet extends SupplyObject {
 	public static final int width=20;
 	public static final int height=20;
+	public static final Image greensupply=new Image("greenSupply.png", width, height, false, true);
+	public static final Image bluesupply=new Image("blueSupply.png", width, height, false, true);
 	private int mode;
+	
 	
 	public supplyBullet(ObjectHandler handler){
 		super(random.nextInt(780)+20,random.nextInt(200)-400,ID.Supply,handler);
@@ -33,12 +37,10 @@ public class supplyBullet extends SupplyObject {
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(mode==0) {
-			gc.setFill(Color.BLUE);
-			gc.fillRect(x, y, width, height);
+			gc.drawImage(greensupply, x, y);
 		}
 		if(mode==1) {
-			gc.setFill(Color.GREEN);
-			gc.fillRect(x, y, width, height);
+			gc.drawImage(bluesupply, x, y);
 		}
 	}
 	

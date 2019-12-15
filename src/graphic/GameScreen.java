@@ -35,6 +35,8 @@ public class GameScreen implements Screen {
 	private ObjectHandler handler=new ObjectHandler();
 	private int stage=1;
 	private int stageTime=0;
+	private boolean bossSpawn=false;
+	private Boss boss;
 	private static Player player;
 	private boolean[] keyDown;
 	private boolean pause = false ;
@@ -230,7 +232,8 @@ public class GameScreen implements Screen {
 				Enemy1 enemy = new Enemy1(handler);
 			}
 			if(stageTime==100) {
-				Boss boss=new Boss(handler);
+				boss=new Boss(handler);
+				bossSpawn=true;
 			}
 			if(stageTime%700==10) {
 				supplyBullet supply=new supplyBullet(handler);
@@ -284,6 +287,14 @@ public class GameScreen implements Screen {
 			GameOverScreen end = new GameOverScreen(primarystage);
 			end.startAnimation();
 		}
+		if(haveBossspawn() && !boss.isShow()) {
+			bossSpawn=false;
+			//for Winner scene
+		}
+	}
+	
+	public boolean haveBossspawn() {
+		return bossSpawn;
 	}
 
 	public static Player getPlayer() {

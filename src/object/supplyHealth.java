@@ -1,6 +1,7 @@
 package object;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -8,6 +9,8 @@ import javafx.scene.shape.Shape;
 public class supplyHealth extends SupplyObject {
 	public static final int width=20;
 	public static final int height=20;
+	public static final Image healthIcon=new Image("healthIcon.png", width, height, false, true);
+
 	
 	public supplyHealth(ObjectHandler handler){
 		super(random.nextInt(800),random.nextInt(200)-400,ID.Supply,handler);
@@ -29,8 +32,7 @@ public class supplyHealth extends SupplyObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.setFill(Color.PINK);
-		gc.fillRect(x, y, width, height);
+		gc.drawImage(healthIcon, x, y);
 	}
 	
 	public void collision() {

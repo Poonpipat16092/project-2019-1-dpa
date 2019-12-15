@@ -25,7 +25,7 @@ public class Player extends BattleshipObject {
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
 		setDamage(1);
-		hp=10;
+		hp=10000;
 		barrierOn=false;
 		velX=0;
 		velY=0;
