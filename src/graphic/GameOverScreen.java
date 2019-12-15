@@ -45,14 +45,14 @@ public class GameOverScreen implements Screen {
 		gc.setFont(HEADER_FONT);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
-		gc.fillText("GAME OVER !", 150, 100);
+		gc.fillText("GAME OVER!", 250, 100);
 		//Press Enter
 		gc.setFont(mainFont);
 		gc.setFill(Color.AQUAMARINE);
-		gc.fillText("Press ENTER ", 330, 400);
+		gc.fillText("Press ENTER ", 310, 400);
 		//Score 
 		gc.setFill(Color.WHITE);
-		gc.fillText("SCORE : " + score, 350, 150);
+		gc.fillText("SCORE : " + score, 300, 150);
 		
 		gc.drawImage(BOOM, 300, 180);
 		

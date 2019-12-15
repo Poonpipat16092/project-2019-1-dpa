@@ -9,6 +9,7 @@ public class GameHud {
 	private int stage;
 	private int score;
 	private Player player;
+	public static final Font HUD_FONT = Font.loadFont(ClassLoader.getSystemResourceAsStream("PressStart2P.ttf"), 14); 
 	
 	public GameHud(Player player) {
 		this.player=player;
@@ -18,7 +19,7 @@ public class GameHud {
 	
 	public void draw(GraphicsContext gc) {
 		gc.setFill(Color.WHITE);
-		gc.setFont(new Font(20));
+		gc.setFont(HUD_FONT);
 		gc.fillText("HP :"+player.getHp(), 10, 20);
 		gc.fillText("Score :"+score, 200, 20);
 		gc.fillText("Stage :"+stage, 500, 20);
