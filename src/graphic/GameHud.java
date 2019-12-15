@@ -19,17 +19,15 @@ public class GameHud {
 	
 	public void draw(GraphicsContext gc) {
 		gc.setFill(Color.WHITE);
-<<<<<<< HEAD
 		gc.setFont(HUD_FONT);
 		gc.fillText("HP :"+player.getHp(), 10, 20);
 		gc.fillText("Score :"+score, 200, 20);
 		gc.fillText("Stage :"+stage, 500, 20);
-=======
 		gc.setFont(new Font(20));
 		gc.fillText("HP :"+player.getHp(), 50, 30);
 		gc.fillText("Score :"+score, 250, 30);
 		gc.fillText("Stage :"+stage, 500, 30);
->>>>>>> c922e08d81bced37e672af0562ed2a2c2802f5ff
+
 	}
 	
 	public void setStage(int stage) {
