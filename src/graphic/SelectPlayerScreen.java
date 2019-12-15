@@ -20,10 +20,6 @@ import javafx.stage.Stage;
 
 public class SelectPlayerScreen implements Screen {
 	
-	public static final Image Player1 = new Image("player1.png",100,100,true,true);
-	public static final Image Player2 = new Image("player2.png",100,100,true,true);
-	public static final Font SELECT_PLAYER = new Font("supermarket.ttf", 75);
-	public static final Font NORMAL = new Font("supermarket.ttf", 35);
 	private Button player1,player2,startButton;
 	private Stage primarystage ;
 	private GraphicsContext gc ;
