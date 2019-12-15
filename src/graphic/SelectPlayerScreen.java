@@ -51,7 +51,7 @@ public class SelectPlayerScreen implements Screen {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
 		
-		gc.setFont(SELECT_PLAYER);
+		gc.setFont(HEADER_FONT);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
 		gc.fillText("Select Player", 188, 100);

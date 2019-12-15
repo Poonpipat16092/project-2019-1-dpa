@@ -20,10 +20,6 @@ public class GameOverScreen implements Screen {
 	private Stage primarystage ;
 	private GraphicsContext gc;
 	private Canvas canvas ;
-	private static final Font mainFont = new Font("supermarket.ttf", 24);
-	private static final Font GAME_OVER_FONT = new Font("supermarket.ttf", 100);
-	private static final Image image = new Image("Boom.png",200,200,true,true);
-//	private static final Image GAME_OVER_SENCE = new Image("");
 	
 	public GameOverScreen(Stage primarystage) {
 		// TODO Auto-generated constructor stub
@@ -46,10 +42,10 @@ public class GameOverScreen implements Screen {
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		//GAMEOVER 
-		gc.setFont(GAME_OVER_FONT);
+		gc.setFont(HEADER_FONT);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
-		gc.fillText("GAME OVER !", 100, 100);
+		gc.fillText("GAME OVER !", 150, 100);
 		//Press Enter
 		gc.setFont(mainFont);
 		gc.setFill(Color.AQUAMARINE);
@@ -58,7 +54,7 @@ public class GameOverScreen implements Screen {
 		gc.setFill(Color.WHITE);
 		gc.fillText("SCORE : " + score, 350, 150);
 		
-		gc.drawImage(image, 300, 180);
+		gc.drawImage(BOOM, 300, 180);
 		
 		root.getChildren().add(canvas);
 		Scene scene = new Scene(root);

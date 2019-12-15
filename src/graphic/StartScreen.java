@@ -23,8 +23,6 @@ public class StartScreen implements Screen{
 	private Canvas canvas;
 	private GraphicsContext gc;
 	private VBox menu;
-	private static final Font mainFont = new Font("supermarket.ttf", 24);
-	public static final Image background = new Image("startScreen.jpg",WIDTH,HEIGHT,false,true);
 	
 	
 	public StartScreen(Stage Primarystage) {
@@ -44,7 +42,7 @@ public class StartScreen implements Screen{
 	public void draw(GraphicsContext gc) {
 		Pane root=new Pane();
 		root.setPrefSize(WIDTH, HEIGHT);
-		gc.drawImage(background, 0, 0);
+		gc.drawImage(START_SCREEN, 0, 0);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
 		
