@@ -142,6 +142,7 @@ public class SelectPlayerScreen implements Screen {
 				}
 				else {
 					GameScreen game=new GameScreen(primarystage);
+					game.getPlayer().setPlayer(selectedPlayer);
 					game.startAnimation();
 					System.out.println(selectedPlayer);
 				}

@@ -110,6 +110,10 @@ public class GameScreen implements Screen {
 					player.setVelX(5);
 					keyDown[2]=true;
 				}
+				if(key.getCode()==KeyCode.B) {
+					stage=5;
+					stageTime=0;
+				}				
 				if(key.getCode()==KeyCode.ESCAPE && pause == false) {
 					pause = true ;
 					timer.stop();
@@ -215,6 +219,7 @@ public class GameScreen implements Screen {
 				supplyBullet supply = new supplyBullet(handler);
 			}
 		}
+		
 		if(stage==5) {
 			
 			if(stageTime==100) {
@@ -230,7 +235,6 @@ public class GameScreen implements Screen {
 				supplyBarrier supply=new supplyBarrier(handler);
 			}
 
-			
 		}
 		stageTime++;
 	}
@@ -241,19 +245,19 @@ public class GameScreen implements Screen {
 	}
 	
 	public void nextStage() {
-		if(stage==1 && stageTime>=2000) {
+		if(stage==1 && stageTime>=4000) {
 			stageTime=0;
 			stage+=1;
 		}
-		if(stage==2 && stageTime>=2000) {
+		if(stage==2 && stageTime>=4000) {
 			stageTime=0;
 			stage+=1;
 		}
-		if(stage==3 && stageTime>=2000) {
+		if(stage==3 && stageTime>=4000) {
 			stageTime=0;
 			stage+=1;
 		}
-		if(stage==4 && stageTime>=2000) {
+		if(stage==4 && stageTime>=4000) {
 			stageTime=0;
 			stage+=1;
 		}
@@ -261,7 +265,7 @@ public class GameScreen implements Screen {
 			//ending scene//
 		}
 	}
-	
+		
 	@Override
 	public void startAnimation() {
 		draw(gc);
