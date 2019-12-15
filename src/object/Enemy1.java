@@ -39,8 +39,8 @@ public class Enemy1 extends BattleshipObject {
 	public void draw(GraphicsContext gc) {
 
 		if(!isShow) return;
-		gc.setFill(Color.RED);
-		gc.fillRect(x, y, width, height);
+//		gc.setFill(Color.RED);
+//		gc.fillRect(x, y, width, height);
 		gc.drawImage(image, x, y);
 
 	}

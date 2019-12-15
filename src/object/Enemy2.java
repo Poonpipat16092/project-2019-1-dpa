@@ -2,13 +2,15 @@ package object;
 
 import java.util.Random;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy2 extends BattleshipObject {
-	public static final int width=40;
-	public static final int height=40;
+	public static final int width=60;
+	public static final int height=90;
+	public static final Image image=new Image("enemy2.png",60,90,false,true);
 	private int hp;
 	public int selfTimer=0;
 	public Enemy2(ObjectHandler handler) {
@@ -58,8 +60,9 @@ public class Enemy2 extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.setFill(Color.BLUE);
-		gc.fillRect(x, y, width, height);
+//		gc.setFill(Color.BLUE);
+//		gc.fillRect(x, y, width, height);
+		gc.drawImage(image, x, y);
 	}
 
 	@Override

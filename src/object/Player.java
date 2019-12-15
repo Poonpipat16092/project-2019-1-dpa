@@ -10,8 +10,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends BattleshipObject {
-	public static final int width=60;
-	public static final int height=60;
+	public static final int width=70;
+	public static final int height=70;
 	private int hp;
 	private boolean barrierOn;
 	private int shootMode=-1;
@@ -25,7 +25,7 @@ public class Player extends BattleshipObject {
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
 		setDamage(1);
-		hp=5;
+		hp=10;
 		barrierOn=false;
 		velX=0;
 		velY=0;
@@ -80,9 +80,9 @@ public class Player extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.setFill(Color.WHITE);
-		gc.fillRect(x+width/3,y,width/3, height-5);
-		gc.fillRect(x,y+height/3,width, height/4);
+//		gc.setFill(Color.WHITE);
+//		gc.fillRect(x+width/3,y,width/3, height-5);
+//		gc.fillRect(x,y+height/3,width, height/4);
 		if(barrierOn) {
 			gc.setFill(Color.BLUE);
 			gc.fillOval(x, y, height, height);

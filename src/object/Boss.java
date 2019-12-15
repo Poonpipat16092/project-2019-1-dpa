@@ -105,7 +105,7 @@ public class Boss extends BattleshipObject {
 	
 	@Override
 	public int getZ() {
-		return 0;
+		return -1;
 	}
 
 	@Override
