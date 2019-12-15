@@ -18,7 +18,7 @@ public class Main extends Application {
 		StartScreen startScreen = new StartScreen(primarystage);
 		startScreen.startAnimation();
 //		GameOverScreen end = new GameOverScreen(primarystage);
-//		end.startAnimation();
+//		end.startAnimation();	
 //		SelectPlayerScreen selectedPlayer = new SelectPlayerScreen(primarystage);
 //		selectedPlayer.startAnimation();
 		primarystage.show();
