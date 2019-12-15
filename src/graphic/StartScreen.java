@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -23,6 +24,8 @@ public class StartScreen implements Screen{
 	private GraphicsContext gc;
 	private VBox menu;
 	private static final Font mainFont = new Font("supermarket.ttf", 24);
+	public static final Image background = new Image("startScreen.jpg",WIDTH,HEIGHT,false,true);
+	
 	
 	public StartScreen(Stage Primarystage) {
 		canvas=new Canvas(WIDTH, HEIGHT);
@@ -41,6 +44,7 @@ public class StartScreen implements Screen{
 	public void draw(GraphicsContext gc) {
 		Pane root=new Pane();
 		root.setPrefSize(WIDTH, HEIGHT);
+		gc.drawImage(background, 0, 0);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
 		
@@ -48,8 +52,8 @@ public class StartScreen implements Screen{
 		primarystage.setScene(scene);
 		
 		//add black background
-		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, WIDTH, HEIGHT);
+//		gc.setFill(Color.BLACK);
+//		gc.fillRect(0, 0, WIDTH, HEIGHT);
 				
 		
 		//add menu
