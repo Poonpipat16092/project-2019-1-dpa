@@ -52,7 +52,7 @@ public class Enemy2 extends GameObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer%100==10) new Bullet(x+width/2, y+height,0,7, getId(), getDamage(), handler);
+		if(selfTimer%75==10) new Bullet(x+width/2, y+height,0,7, getId(), getDamage(), handler);
 	}
 	
 	@Override

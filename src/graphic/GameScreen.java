@@ -10,6 +10,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import object.Boss;
 import object.Enemy1;
@@ -31,7 +32,7 @@ public class GameScreen implements Screen {
 	private AnimationTimer timer;
 	private static GameHud hud;
 	private ObjectHandler handler=new ObjectHandler();
-	private int stage=2;
+	private int stage=1;
 	private int stageTime=0;
 	
 	private static Player player;
@@ -72,6 +73,10 @@ public class GameScreen implements Screen {
 				hud.draw(gc);
 				updateHud();
 				isGameOver();
+				nextStage();
+				gc.setFill(Color.ANTIQUEWHITE);
+				gc.setFont(new Font(20));
+				gc.fillText("stageTimer : "+stageTime, 500, 580);
 			}
 		};
 
@@ -138,13 +143,10 @@ public class GameScreen implements Screen {
 	public void spawn() {
 		if(stage==1) {
 			
-			if(stageTime%100==0) {
+			if(stageTime%50==0) {
 				Enemy1 enemy = new Enemy1(handler);
 			}
-			if(stageTime%200==0) {
-				Enemy2 enemy = new Enemy2(handler);
-			}
-			if(stageTime%250==100) {
+			if(stageTime%100==50) {
 				Enemy3 enemy = new Enemy3(handler);
 			}
 			if(stageTime%500==300) {
@@ -156,12 +158,79 @@ public class GameScreen implements Screen {
 
 		}
 		if(stage==2) {
+			
+			if(stageTime%30==0) {
+				Enemy1 enemy = new Enemy1(handler);
+			}
+			if(stageTime%75==50) {
+				Enemy3 enemy = new Enemy3(handler);
+			}
+			if(stageTime%500==200) {
+				supplyHealth supply = new supplyHealth(handler);
+			}
+			if(stageTime%500==300) {
+				supplyBarrier supply = new supplyBarrier(handler);
+			}
+			
+		}
+		if(stage==3) {
+			
+			if(stageTime%50==0) {
+				Enemy1 enemy = new Enemy1(handler);
+			}
+			if(stageTime%125==50) {
+				Enemy3 enemy = new Enemy3(handler);
+			}
+			if(stageTime%125==75) {
+				Enemy2 enemy = new Enemy2(handler);
+			}
+			if(stageTime%500==100) {
+				supplyHealth supply = new supplyHealth(handler);
+			}
+			if(stageTime%500==200) {
+				supplyBarrier supply = new supplyBarrier(handler);
+			}
+			if(stageTime%700==300) {
+				supplyBullet supply = new supplyBullet(handler);
+			}
+			
+		}
+		if(stage==4) {
+			if(stageTime%50==0) {
+				Enemy1 enemy = new Enemy1(handler);
+			}
+			if(stageTime%100==50) {
+				Enemy2 enemy = new Enemy2(handler);
+			}
+			if(stageTime%100==75) {
+				Enemy3 enemy = new Enemy3(handler);
+			}
+			if(stageTime%500==100) {
+				supplyHealth supply = new supplyHealth(handler);
+			}
+			if(stageTime%500==200) {
+				supplyBarrier supply = new supplyBarrier(handler);
+			}
+			if(stageTime%700==200){
+				supplyBullet supply = new supplyBullet(handler);
+			}
+		}
+		if(stage==5) {
+			
 			if(stageTime==100) {
 				Boss boss=new Boss(handler);
 			}
-			if(stageTime%200==10) {
+			if(stageTime%700==10) {
 				supplyBullet supply=new supplyBullet(handler);
 			}
+			if(stageTime%400==200) {
+				supplyHealth supply=new supplyHealth(handler);
+			}
+			if(stageTime%300==100) {
+				supplyBarrier supply=new supplyBarrier(handler);
+			}
+
+			
 		}
 		stageTime++;
 	}
@@ -169,6 +238,28 @@ public class GameScreen implements Screen {
 	public void updateHud() {
 		handler.removeNotShow();
 		hud.setStage(stage);
+	}
+	
+	public void nextStage() {
+		if(stage==1 && stageTime>=2000) {
+			stageTime=0;
+			stage+=1;
+		}
+		if(stage==2 && stageTime>=2000) {
+			stageTime=0;
+			stage+=1;
+		}
+		if(stage==3 && stageTime>=2000) {
+			stageTime=0;
+			stage+=1;
+		}
+		if(stage==4 && stageTime>=2000) {
+			stageTime=0;
+			stage+=1;
+		}
+		if(stage==5) {
+			//ending scene//
+		}
 	}
 	
 	@Override

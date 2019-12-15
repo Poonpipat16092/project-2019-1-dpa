@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 
 public interface Screen {
+	
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 600 ; 
 	
