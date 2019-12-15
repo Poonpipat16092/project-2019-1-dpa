@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -34,7 +35,6 @@ public class GameScreen implements Screen {
 	private ObjectHandler handler=new ObjectHandler();
 	private int stage=1;
 	private int stageTime=0;
-	
 	private static Player player;
 	private boolean[] keyDown;
 	private boolean pause = false ;
@@ -65,8 +65,7 @@ public class GameScreen implements Screen {
 			public void handle(long current) {
 				spawn();
 				//reset background
-				gc.setFill(Color.BLACK);
-				gc.fillRect(0, 0, WIDTH, HEIGHT);
+				gc.drawImage(GAME_SCREEN, 0, 0);
 				//handler with object
 				handler.draw(gc);
 				handler.tick();

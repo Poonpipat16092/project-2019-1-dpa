@@ -12,6 +12,7 @@ public interface Screen {
 	public static final Font mainFont = Font.loadFont(ClassLoader.getSystemResourceAsStream("PressStart2P.ttf"), 16);
 	public static final Font HEADER_FONT = Font.loadFont(ClassLoader.getSystemResourceAsStream("PressStart2P.ttf"), 30);
 	public static final Font NORMAL = Font.loadFont(ClassLoader.getSystemResourceAsStream("PressStart2P.ttf"), 20);
+	public static final Image GAME_SCREEN=new Image("gameScreen.jpg",WIDTH,HEIGHT,false,true);
 	public static final Image BOOM = new Image("Boom.png",200,200,true,true);
 	public static final Image START_SCREEN = new Image("startScreen.jpg",WIDTH,HEIGHT,false,true);
 	public static final Image Player1 = new Image("player1.png",100,100,true,true);
