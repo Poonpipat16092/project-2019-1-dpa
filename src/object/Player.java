@@ -17,7 +17,10 @@ public class Player extends GameObject {
 	private int shootMode=-1;
 	private int selfTimer=0;
 	private int modeTimer=0;
-	public static final Image image=new Image("player1.png",width,height,true,true);
+	private int playerNum;
+	public static final Image player1=new Image("player1.png",width,height,true,true);
+	public static final Image player2=new Image("player2.png",width,height,true,true);
+	private Image image;
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
@@ -89,7 +92,7 @@ public class Player extends GameObject {
 	}
 	
 	public void shooting() {
-		if(modeTimer>=20) {
+		if(modeTimer>=35) {
 			setMode(-1);
 			modeTimer=0;
 		}
@@ -131,6 +134,15 @@ public class Player extends GameObject {
 	
 	public int getHp() {
 		return hp;
+	}
+	
+	public void setPlayer(String player) {
+		if(player=="Player1") {
+			image=player1;
+		}
+		if(player=="Player2") {
+			image=player2;
+		}
 	}
 	
 	public Shape getBounds() {
