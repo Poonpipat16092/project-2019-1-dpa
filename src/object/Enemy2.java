@@ -14,10 +14,10 @@ public class Enemy2 extends BattleshipObject {
 	private int hp;
 	public int selfTimer=0;
 	public Enemy2(ObjectHandler handler) {
-		super(random.nextInt(760),random.nextInt(200)-400,ID.Enemy,handler);
+		super(random.nextInt(800-width),random.nextInt(200)-400,ID.Enemy,handler);
 		setDamage(1);
 		setScore(50);
-		hp=1;
+		hp=2;
 		velX=2;
 		velY=2;
 		limitX=800;

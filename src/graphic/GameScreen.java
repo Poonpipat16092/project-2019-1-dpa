@@ -226,6 +226,9 @@ public class GameScreen implements Screen {
 		
 		if(stage==5) {
 			
+			if(stageTime%50==0) {
+				Enemy1 enemy = new Enemy1(handler);
+			}
 			if(stageTime==100) {
 				Boss boss=new Boss(handler);
 			}

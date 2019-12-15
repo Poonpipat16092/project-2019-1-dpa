@@ -15,7 +15,7 @@ public class PauseScreen  {
 	
 	
 	public static void draw(GraphicsContext gc) {
-		// TODO Auto-generated meth
+	
 		gc.setFill(Color.rgb(192, 192, 192, 0.5));
 		gc.fillRect(0, 0, 800,600);
 		
