@@ -110,6 +110,10 @@ public class GameScreen implements Screen {
 					player.setVelX(5);
 					keyDown[2]=true;
 				}
+				if(key.getCode()==KeyCode.B) {
+					stage=5;
+					stageTime=0;
+				}				
 				if(key.getCode()==KeyCode.ESCAPE && pause == false) {
 					pause = true ;
 					timer.stop();
@@ -261,8 +265,7 @@ public class GameScreen implements Screen {
 			//ending scene//
 		}
 	}
-	
-	
+		
 	@Override
 	public void startAnimation() {
 		draw(gc);

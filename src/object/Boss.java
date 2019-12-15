@@ -20,7 +20,7 @@ public class Boss extends GameObject {
 		hp=1000;
 		setupSpeed();
 		limitX=800;
-		limitY=100;
+		limitY=0;
 		handler.addObject(this);
 	}
 	
