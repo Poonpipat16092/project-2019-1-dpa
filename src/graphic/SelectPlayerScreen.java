@@ -48,13 +48,14 @@ public class SelectPlayerScreen implements Screen {
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		gc.setFont(HEADER_FONT);
-		gc.setFill(Color.WHITE);
+		gc.setFill(Color.YELLOW);
 		gc.setLineWidth(2);
-		gc.fillText("Select Player", 188, 100);
+		gc.fillText("Select Player", 205, 100);
 		
+		gc.setFill(Color.WHITE);
 		gc.setFont(NORMAL);
-		gc.fillText("Player 1", 200, 350);
-		gc.fillText("Player 2", 485, 350);
+		gc.fillText("Player 1", 170, 350);
+		gc.fillText("Player 2", 475, 350);
 		
 		root.getChildren().add(canvas);
 		
@@ -77,7 +78,7 @@ public class SelectPlayerScreen implements Screen {
 		player.setPrefWidth(800);
 		player.setPrefHeight(400);
 		player.setSpacing(100);
-		player.setPadding(new Insets(50,15,10,10));
+		player.setPadding(new Insets(50,10,10,10));
 		player.setAlignment(Pos.CENTER);
 		
 		
@@ -121,7 +122,7 @@ public class SelectPlayerScreen implements Screen {
 		start.setPrefWidth(800);
 		start.setPrefHeight(100);
 		start.setSpacing(50);
-		start.setPadding(new Insets(400,15,10,10)); //down 400 
+		start.setPadding(new Insets(425,15,10,10)); //down 400 
 		start.setAlignment(Pos.BOTTOM_CENTER);
 		
 		startButton = new Button("PLAY!");
