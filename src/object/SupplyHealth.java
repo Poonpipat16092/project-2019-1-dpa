@@ -11,7 +11,7 @@ public class SupplyHealth extends SupplyObject {
 
 	
 	public SupplyHealth(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-400,ID.Supply,handler);
+		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
 		velX=0;
 		velY=2;
 		limitX=800;
@@ -39,7 +39,7 @@ public class SupplyHealth extends SupplyObject {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
 					collectSupply.play();
 					((Player) temp).getHealth(1);
-					setShow(false);
+					getHit(temp);
 				}
 			}
 		}
@@ -56,7 +56,7 @@ public class SupplyHealth extends SupplyObject {
 	}
 
 	@Override
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		setShow(false);
 	}
 

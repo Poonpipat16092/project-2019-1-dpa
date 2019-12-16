@@ -13,7 +13,7 @@ public class SupplyBullet extends SupplyObject {
 	
 	
 	public SupplyBullet(ObjectHandler handler){
-		super(random.nextInt(780)+20,random.nextInt(200)-400,ID.Supply,handler);
+		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
 		mode=random.nextInt(2);
 		velX=0;
 		velY=2;
@@ -47,7 +47,7 @@ public class SupplyBullet extends SupplyObject {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
 					((Player) temp).setMode(mode);
-					setShow(false);
+					getHit(this);;
 				}
 			}
 		}
@@ -64,7 +64,7 @@ public class SupplyBullet extends SupplyObject {
 	}
 
 	@Override
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		setShow(false);
 	}
 

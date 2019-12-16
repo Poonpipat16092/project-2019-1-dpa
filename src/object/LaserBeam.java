@@ -51,7 +51,7 @@ public class LaserBeam extends BulletObject {
 		return rectangle;
 	}
 	
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		checkShow();
 	}
 		

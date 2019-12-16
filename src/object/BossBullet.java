@@ -58,7 +58,7 @@ public class BossBullet extends BulletObject {
 		return rectangle;
 	}
 	
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		checkShow();
 	}
 		

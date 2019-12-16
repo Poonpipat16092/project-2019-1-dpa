@@ -56,21 +56,21 @@ public class Player extends BattleshipObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Enemy || temp.getId()==ID.Boss) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					getHit(((Damagable) temp).getDamage());
-					temp.getHit(getDamage());
+					getHit(temp);
+					temp.getHit(this);
 				}
 				else if(getBounds2().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow) {
-					getHit(((Damagable) temp).getDamage());
-					temp.getHit(getDamage());
+					getHit(temp);
+					temp.getHit(this);
 				}
 			}
 		}
 		
 	}
 	
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		if(barrierOn) barrierOn=false;
-		else hp-=damage;
+		else hp-=((Damagable) object).getDamage();
 		checkShow();
 	}
 	

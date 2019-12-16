@@ -10,7 +10,7 @@ public class SupplyBarrier extends SupplyObject {
 	public static final Image barriericon=new Image("barria.png", width, height, false, true);
 	
 	public SupplyBarrier(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-400,ID.Supply,handler);
+		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
 		velX=0;
 		velY=2;
 		limitX=800;
@@ -38,7 +38,7 @@ public class SupplyBarrier extends SupplyObject {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
 					((Player) temp).setBarrier(true);
-					setShow(false);
+					getHit(temp);;
 				}
 			}
 		}
@@ -55,7 +55,7 @@ public class SupplyBarrier extends SupplyObject {
 	}
 
 	@Override
-	public void getHit(int damage) {
+	public void getHit(GameObject gameObject) {
 		setShow(false);
 	}
 

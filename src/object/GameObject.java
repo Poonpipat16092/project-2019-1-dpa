@@ -32,7 +32,7 @@ public abstract class GameObject {
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
 	public abstract Shape getBounds();
-	public abstract void getHit(int damage);
+	public abstract void getHit(GameObject object);
 	public abstract void checkShow();
 	
 

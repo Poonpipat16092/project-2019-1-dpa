@@ -43,8 +43,8 @@ public class Boss extends BattleshipObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					temp.getHit(getDamage());
-					getHit(((Damagable) temp).getDamage());
+					temp.getHit(this);
+					getHit(temp);
 				}
 			}
 		}
@@ -120,8 +120,8 @@ public class Boss extends BattleshipObject {
 	}
 
 	@Override
-	public void getHit(int damage) {
-		hp-=damage;
+	public void getHit(GameObject object) {
+		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
 		checkShow();
 	}
 
