@@ -21,9 +21,9 @@ import object.GameObject;
 import object.ID;
 import object.ObjectHandler;
 import object.Player;
-import object.supplyBarrier;
-import object.supplyBullet;
-import object.supplyHealth;
+import object.SupplyBarrier;
+import object.SupplyBullet;
+import object.SupplyHealth;
 
 public class GameScreen implements Screen {
 	private Stage primarystage;
@@ -152,13 +152,13 @@ public class GameScreen implements Screen {
 				Enemy3 enemy = new Enemy3(handler);
 			}
 			if(stageTime%500==300) {
-				supplyHealth supply = new supplyHealth(handler);
+				SupplyHealth supply = new SupplyHealth(handler);
 			}
 			if(stageTime%500==300) {
-				supplyBarrier supply = new supplyBarrier(handler);
+				SupplyBarrier supply = new SupplyBarrier(handler);
 			}
 			if(stageTime%700==300) {
-				supplyBullet supply = new supplyBullet(handler);
+				SupplyBullet supply = new SupplyBullet(handler);
 			}
 
 
@@ -172,13 +172,13 @@ public class GameScreen implements Screen {
 				Enemy3 enemy = new Enemy3(handler);
 			}
 			if(stageTime%500==200) {
-				supplyHealth supply = new supplyHealth(handler);
+				SupplyHealth supply = new SupplyHealth(handler);
 			}
 			if(stageTime%500==300) {
-				supplyBarrier supply = new supplyBarrier(handler);
+				SupplyBarrier supply = new SupplyBarrier(handler);
 			}
 			if(stageTime%700==300) {
-				supplyBullet supply = new supplyBullet(handler);
+				SupplyBullet supply = new SupplyBullet(handler);
 			}
 
 			
@@ -195,13 +195,13 @@ public class GameScreen implements Screen {
 				Enemy2 enemy = new Enemy2(handler);
 			}
 			if(stageTime%500==100) {
-				supplyHealth supply = new supplyHealth(handler);
+				SupplyHealth supply = new SupplyHealth(handler);
 			}
 			if(stageTime%500==200) {
-				supplyBarrier supply = new supplyBarrier(handler);
+				SupplyBarrier supply = new SupplyBarrier(handler);
 			}
 			if(stageTime%700==300) {
-				supplyBullet supply = new supplyBullet(handler);
+				SupplyBullet supply = new SupplyBullet(handler);
 			}
 			
 		}
@@ -216,13 +216,13 @@ public class GameScreen implements Screen {
 				Enemy3 enemy = new Enemy3(handler);
 			}
 			if(stageTime%500==100) {
-				supplyHealth supply = new supplyHealth(handler);
+				SupplyHealth supply = new SupplyHealth(handler);
 			}
 			if(stageTime%500==200) {
-				supplyBarrier supply = new supplyBarrier(handler);
+				SupplyBarrier supply = new SupplyBarrier(handler);
 			}
 			if(stageTime%700==200){
-				supplyBullet supply = new supplyBullet(handler);
+				SupplyBullet supply = new SupplyBullet(handler);
 			}
 		}
 		
@@ -236,13 +236,13 @@ public class GameScreen implements Screen {
 				bossSpawn=true;
 			}
 			if(stageTime%700==10) {
-				supplyBullet supply=new supplyBullet(handler);
+				SupplyBullet supply=new SupplyBullet(handler);
 			}
 			if(stageTime%400==200) {
-				supplyHealth supply=new supplyHealth(handler);
+				SupplyHealth supply=new SupplyHealth(handler);
 			}
 			if(stageTime%300==100) {
-				supplyBarrier supply=new supplyBarrier(handler);
+				SupplyBarrier supply=new SupplyBarrier(handler);
 			}
 
 		}

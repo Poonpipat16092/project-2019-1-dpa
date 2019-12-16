@@ -85,10 +85,6 @@ public abstract class GameObject {
 		this.isShow = isShow;
 	}
 	
-	public Random getRandom() {
-		return random;
-	}
-	
 	public void setScore(int score) {
 		this.score=score;
 	}

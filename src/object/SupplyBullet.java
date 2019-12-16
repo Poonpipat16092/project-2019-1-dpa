@@ -6,13 +6,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyBullet extends SupplyObject {
+public class SupplyBullet extends SupplyObject {
 	public static final Image greensupply=new Image("greenSupply.png", width, height, false, true);
 	public static final Image bluesupply=new Image("blueSupply.png", width, height, false, true);
 	private int mode;
 	
 	
-	public supplyBullet(ObjectHandler handler){
+	public SupplyBullet(ObjectHandler handler){
 		super(random.nextInt(780)+20,random.nextInt(200)-400,ID.Supply,handler);
 		mode=random.nextInt(2);
 		velX=0;
