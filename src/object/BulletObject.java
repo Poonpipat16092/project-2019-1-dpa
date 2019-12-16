@@ -6,8 +6,8 @@ import javafx.scene.shape.Shape;
 public abstract class BulletObject extends GameObject implements Damagable{
 	private int damage;
 
-	public BulletObject(double x,double y,ID id,ObjectHandler handler) {
-		super(x,y,id,handler);
+	public BulletObject(double x,double y,ID id,ObjectHandler handler,int width,int height) {
+		super(x,y,id,handler,width,height);
 	}
 	public int getDamage() {
 		return damage;

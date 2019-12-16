@@ -7,7 +7,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class SupplyHealth extends SupplyObject {
-	public static final Image healthIcon=new Image("healthIcon.png", width, height, false, true);
+	public static final Image healthIcon=new Image("healthIcon.png", 30, 30, false, true);
 
 	
 	public SupplyHealth(ObjectHandler handler){

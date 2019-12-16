@@ -8,15 +8,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Bullet extends BulletObject {
-	public static final int width=10;
-	public static final int heigth=20;
-	public static final Image playerLaser=new Image("laserBlue02.png",width,heigth,true,true);
-	public static final Image playerLaser2=new Image("laserGreen.png",width,heigth,true,true);
-	public static final Image enemyLaser=new Image("laserRed.png",width,heigth,true,true);
+	public static final Image playerLaser=new Image("laserBlue02.png",10,20,true,true);
+	public static final Image playerLaser2=new Image("laserGreen.png",10,20,true,true);
+	public static final Image enemyLaser=new Image("laserRed.png",10,20,true,true);
 	
 	
 	public Bullet(double x,double y,int velX,int velY,ID id,int damage,ObjectHandler handler) {
-		super(x, y, id, handler);
+		super(x, y, id, handler,10,20);
 		setDamage(damage);
 		limitY=700;
 		limitX=900;
@@ -61,7 +59,7 @@ public class Bullet extends BulletObject {
 
 	@Override
 	public Rectangle getBounds() {
-		Rectangle rect=new Rectangle(x,y,width,heigth);
+		Rectangle rect=new Rectangle(x,y,width,height);
 		return rect;
 	}
 	

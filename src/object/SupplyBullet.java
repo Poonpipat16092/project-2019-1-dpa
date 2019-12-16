@@ -7,8 +7,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class SupplyBullet extends SupplyObject {
-	public static final Image greensupply=new Image("greenSupply.png", width, height, false, true);
-	public static final Image bluesupply=new Image("blueSupply.png", width, height, false, true);
+	public static final Image greensupply=new Image("greenSupply.png", 30, 30, false, true);
+	public static final Image bluesupply=new Image("blueSupply.png", 30, 30, false, true);
 	private int mode;
 	
 	

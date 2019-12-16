@@ -7,13 +7,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy1 extends BattleshipObject {
-	public static final int width=50;
-	public static final int height=50;
 	private int hp;
-	private Image image=new Image("meteorSmall.png",width,height,true,true);
+	private Image image=new Image("meteorSmall.png",50,50,true,true);
 	
 	public Enemy1(ObjectHandler handler) {
-		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler);
+		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler,50,50);
 		setDamage(1);
 		setScore(1);
 		setSpeed();

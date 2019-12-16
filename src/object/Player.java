@@ -10,21 +10,19 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends BattleshipObject {
-	public static final int width=70;
-	public static final int height=70;
 	private int hp;
 	private boolean barrierOn;
 	private int shootMode=-1;
 	private int selfTimer=0;
 	private int modeTimer=0;
 	private int playerNum;
-	public static final Image player1=new Image("player1.png",width,height,true,true);
-	public static final Image player2=new Image("player2.png",width,height,true,true);
-	public static final Image barrier=new Image("barrier.png",width,height,false,true);
+	public static final Image player1=new Image("player1.png",70,70,true,true);
+	public static final Image player2=new Image("player2.png",70,70,true,true);
+	public static final Image barrier=new Image("barrier.png",70,70,false,true);
 	private Image currentImage;
 
 	public Player(ObjectHandler handler) {
-		super(400,500,ID.Player,handler);
+		super(400,500,ID.Player,handler,70,70);
 		setDamage(1);
 		hp=10000;
 		barrierOn=false;
