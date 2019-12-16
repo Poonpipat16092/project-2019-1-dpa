@@ -256,23 +256,24 @@ public class GameScreen implements Screen {
 	
 	public void nextStage() {
 		if(stage==1 && stageTime>=4000) {
+			AudioLoader.NEXT_STAGE.play();
 			stageTime=0;
 			stage+=1;
 		}
 		if(stage==2 && stageTime>=4000) {
+			AudioLoader.NEXT_STAGE.play();
 			stageTime=0;
 			stage+=1;
 		}
 		if(stage==3 && stageTime>=4000) {
+			AudioLoader.NEXT_STAGE.play();
 			stageTime=0;
 			stage+=1;
 		}
 		if(stage==4 && stageTime>=4000) {
+			AudioLoader.NEXT_STAGE.play();
 			stageTime=0;
 			stage+=1;
-		}
-		if(stage==5) {
-			//ending scene//
 		}
 	}
 		
@@ -288,7 +289,8 @@ public class GameScreen implements Screen {
 			GameOverScreen end = new GameOverScreen(primarystage);
 			end.startAnimation();
 		}
-		if(haveBossspawn() && !boss.isShow()) {
+		if(stage==5 && haveBossspawn() && !boss.isShow()) {
+			AudioLoader.CONGRAT.play();
 			bossSpawn=false;
 			//for Winner scene
 		}

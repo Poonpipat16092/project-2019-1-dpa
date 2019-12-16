@@ -1,6 +1,8 @@
 package application;
 
+import graphic.AudioLoader;
 import graphic.GameOverScreen;
+import graphic.ImageLoader;
 import graphic.StartScreen;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -10,6 +12,8 @@ import graphic.SelectPlayerScreen;
 public class Main extends Application {
 
 	public static void main(String[] args) {
+		new AudioLoader();
+		new ImageLoader();
 		launch(args);
 	}
 

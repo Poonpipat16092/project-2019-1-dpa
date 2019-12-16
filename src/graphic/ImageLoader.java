@@ -30,5 +30,6 @@ public class ImageLoader {
 	public static final Image BLUE_AMMUNITION_ICON=new Image("blueSupply.png", 30, 30, false, true);
 	public static final Image HEALTH_ICON=new Image("healthIcon.png", 30, 30, false, true);
 
-
+	public ImageLoader() {
+	}
 }

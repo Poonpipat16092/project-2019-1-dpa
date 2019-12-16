@@ -19,13 +19,14 @@ public abstract class GameObject {
 	protected int limitY;
 	protected ObjectHandler handler;
 	protected boolean isShow;
-	protected int score=0;
-	public static final Random random=new Random();
+	protected int score;
+	protected static Random random=new Random();
 	
 	public GameObject(double x,double y,ID id,ObjectHandler handler,int width,int height) {
 		this.x=x;
 		this.y=y;
 		this.id=id;
+		this.score=0;
 		this.handler=handler;
 		this.isShow=true;
 		this.width=width;
@@ -107,5 +108,5 @@ public abstract class GameObject {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-		
+			
 }
