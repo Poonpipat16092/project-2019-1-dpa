@@ -8,16 +8,14 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Boss extends BattleshipObject {
-	public static final int width=400;
-	public static final int height=100;
 	public static final Image bossCharging=new Image("laserRedShot.png", 20, 20, false, true);
-	public static final Image boss=new Image("Boss.png", width, height, false, true);
+	public static final Image boss=new Image("Boss.png", 400, 100, false, true);
 	private int hp;
 	private boolean timerStart=false;
 	private boolean ultimate=false;
 	public int selfTimer=0;
 	public Boss(ObjectHandler handler) {
-		super(200,-100,ID.Boss,handler);
+		super(200,-100,ID.Boss,handler,400,100);
 		setDamage(2);
 		setScore(10000);
 		hp=300;

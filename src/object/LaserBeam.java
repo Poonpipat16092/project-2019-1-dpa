@@ -7,14 +7,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class LaserBeam extends BulletObject {
-	public static final int width=100;
-	public static final int height=700;
 	private Boss boss;
 	private int timer;
-	public static final Image LASERBEAM=new Image("MeagaLaser.jpg", width, height, false, true);
+	public static final Image LASERBEAM=new Image("MeagaLaser.jpg", 100, 700, false, true);
 	
 	public LaserBeam(Boss boss,ObjectHandler handler) {
-		super(boss.getX()+boss.width/2-width/2,boss.getY()+boss.height, ID.Boss, handler);
+		super(boss.getX()+boss.width/2-50,boss.getY()+boss.height, ID.Boss, handler,100,700);
 		this.boss=boss;
 		setDamage(boss.getDamage());
 		timer=0;

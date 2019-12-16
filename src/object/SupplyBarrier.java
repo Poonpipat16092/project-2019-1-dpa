@@ -7,7 +7,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class SupplyBarrier extends SupplyObject {
-	public static final Image barriericon=new Image("barria.png", width, height, false, true);
+	public static final Image barriericon=new Image("barria.png", 30, 30, false, true);
 	
 	public SupplyBarrier(ObjectHandler handler){
 		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);

@@ -9,13 +9,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class BossBullet extends BulletObject {
-	public static final int width=20;
-	public static final int height=20;
 	public int state;
-	public static final Image BossNormalBullet=new Image("BossNormalBullet.png", width, height, false, true);
+	public static final Image BossNormalBullet=new Image("BossNormalBullet.png", 20, 20, false, true);
 	
 	public BossBullet(double x,double y,int damage,ObjectHandler handler,int state) {
-		super(x, y, ID.Boss, handler);
+		super(x, y, ID.Boss, handler,20,20);
 		setDamage(damage);
 		this.state=state;
 		limitY=700;

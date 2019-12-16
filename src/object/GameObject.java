@@ -13,6 +13,7 @@ public abstract class GameObject {
 	
 	protected double x,y;//location
 	protected int velX,velY;//speed per frame
+	protected int width,height;
 	protected ID id;
 	protected int limitX;
 	protected int limitY;
@@ -21,12 +22,14 @@ public abstract class GameObject {
 	protected int score=0;
 	public static final Random random=new Random();
 	
-	public GameObject(double x,double y,ID id,ObjectHandler handler) {
+	public GameObject(double x,double y,ID id,ObjectHandler handler,int width,int height) {
 		this.x=x;
 		this.y=y;
 		this.id=id;
 		this.handler=handler;
 		this.isShow=true;
+		this.width=width;
+		this.height=height;
 	}
 	public abstract void tick();
 	public abstract void draw(GraphicsContext gc);
@@ -91,6 +94,18 @@ public abstract class GameObject {
 	
 	public int getScore() {
 		return score;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
 	}
 		
 }

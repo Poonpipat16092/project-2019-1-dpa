@@ -9,14 +9,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy3 extends BattleshipObject {
-	public static final int width=50;
-	public static final int height=50;
-	public static final Image image=new Image("ufoRed.png", width, height, false, true);
-	public static final double speed=4;
+	public static final Image image=new Image("ufoRed.png", 50, 50, false, true);
+	public int speed=4;
 	public int hp;
 	
 	public Enemy3(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler);
+		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler,50,50);
 		setDamage(1);
 		setScore(50);
 		hp=2;
