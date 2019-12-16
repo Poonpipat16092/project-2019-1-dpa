@@ -21,12 +21,13 @@ public class EndScreen implements Screen {
 	private Stage primarystage ;
 	private GraphicsContext gc;
 	private Canvas canvas ;
+	private boolean isWin ;
 	
-	public EndScreen(Stage primarystage) {
+	public EndScreen(Stage primarystage,boolean iswin) {
 		// TODO Auto-generated constructor stub
 		canvas = new Canvas(WIDTH,HEIGHT) ;
 		gc = canvas.getGraphicsContext2D();
-		
+		this.isWin = iswin ;
 		this.score=GameScreen.getHud().getScore();
 		this.primarystage = primarystage;
 		
@@ -42,20 +43,25 @@ public class EndScreen implements Screen {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
 		
-		//GAMEOVER 
 		gc.setFont(HEADER_FONT);
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
-		gc.fillText("GAME OVER!", 250, 100);
+		if(isWin) {
+			gc.fillText("WINNER!", 285, 100);
+			gc.drawImage(ImageLoader.WINNER_CUP, 300, 180);
+		}
+		else {
+			gc.fillText("GAME OVER!", 250, 100);
+			gc.drawImage(ImageLoader.BOOM, 300, 180);
+		}
 		//Press Enter
 		gc.setFont(MAIN_FONT);
 		gc.setFill(Color.AQUAMARINE);
-		gc.fillText("Press ENTER ", 310, 400);
+		gc.fillText("Press ENTER ", 310, 410);
 		//Score 
 		gc.setFill(Color.WHITE);
 		gc.fillText("SCORE : " + score, 300, 150);
 		
-		gc.drawImage(ImageLoader.BOOM, 300, 180);
 		
 		root.getChildren().add(canvas);
 		Scene scene = new Scene(root);
