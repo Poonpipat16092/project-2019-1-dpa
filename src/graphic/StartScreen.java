@@ -11,6 +11,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.*;
@@ -24,6 +26,7 @@ public class StartScreen implements Screen{
 	private Canvas canvas;
 	private GraphicsContext gc;
 	private VBox menu;
+	
 	
 	public StartScreen(Stage Primarystage) {
 		canvas=new Canvas(WIDTH, HEIGHT);

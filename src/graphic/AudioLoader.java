@@ -11,7 +11,7 @@ public class AudioLoader {
 	public static final AudioClip COLLECT_SUPPLY = new AudioClip(ClassLoader.getSystemResource("collectsupply.mp3").toString());
 	public static final AudioClip DIED = new AudioClip(ClassLoader.getSystemResource("died.mp3").toString());
 	public static final AudioClip ERRORR = new AudioClip(ClassLoader.getSystemResource("error.mp3").toString());
-	public static final Image BOSSCHARGING=new Image("laserRedShot.png", 20, 20, false, true);
-	public static final Image BOSS=new Image("Boss.png", 400, 100, false, true);
+	public static final AudioClip NEXT_STAGE = new AudioClip(ClassLoader.getSystemResource("nextstage.mp3").toString());
+	public static final AudioClip CONGRAT = new AudioClip(ClassLoader.getSystemResource("congratulation.mp3").toString());
 	
 }
