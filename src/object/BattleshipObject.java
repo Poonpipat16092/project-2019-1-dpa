@@ -10,6 +10,7 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 	private int hp;
 	
 	public abstract void collision();
+	
 	public BattleshipObject(double x,double y,ID id,ObjectHandler handler) {
 		super(x,y,id,handler);
 		

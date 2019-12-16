@@ -32,7 +32,7 @@ public abstract class GameObject {
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
 	public abstract Shape getBounds();
-	public abstract void getHit(int damage);
+	public abstract void getHit(GameObject object);
 	public abstract void checkShow();
 	
 
@@ -83,10 +83,6 @@ public abstract class GameObject {
 
 	public void setShow(boolean isShow) {
 		this.isShow = isShow;
-	}
-	
-	public Random getRandom() {
-		return random;
 	}
 	
 	public void setScore(int score) {

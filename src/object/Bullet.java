@@ -65,7 +65,7 @@ public class Bullet extends BulletObject {
 		return rect;
 	}
 	
-	public void getHit(int damage) {
+	public void getHit(GameObject object) {
 		checkShow();
 	}
 		

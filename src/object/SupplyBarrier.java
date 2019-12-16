@@ -6,17 +6,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class supplyHealth extends SupplyObject {
-	public static final Image healthIcon=new Image("healthIcon.png", width, height, false, true);
-
+public class SupplyBarrier extends SupplyObject {
+	public static final Image barriericon=new Image("barria.png", width, height, false, true);
 	
-	public supplyHealth(ObjectHandler handler){
-		super(random.nextInt(800),random.nextInt(200)-400,ID.Supply,handler);
+	public SupplyBarrier(ObjectHandler handler){
+		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
 		velX=0;
 		velY=2;
 		limitX=800;
 		limitY=700;
 		handler.addObject(this);
+		//
 	}
 
 	@Override
@@ -30,16 +30,15 @@ public class supplyHealth extends SupplyObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.drawImage(healthIcon, x, y);
+		gc.drawImage(barriericon, x, y);
 	}
 	
 	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-//					collectSupply.play();
-					((Player) temp).getHealth(1);
-					setShow(false);
+					((Player) temp).setBarrier(true);
+					getHit(temp);;
 				}
 			}
 		}
@@ -56,7 +55,7 @@ public class supplyHealth extends SupplyObject {
 	}
 
 	@Override
-	public void getHit(int damage) {
+	public void getHit(GameObject gameObject) {
 		setShow(false);
 	}
 

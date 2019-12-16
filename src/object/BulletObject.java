@@ -22,7 +22,6 @@ public abstract class BulletObject extends GameObject implements Damagable{
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
 	public abstract Shape getBounds();
-	public abstract void getHit(int damage);
 	public abstract void checkShow();
 
 }
