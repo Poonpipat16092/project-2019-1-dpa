@@ -14,6 +14,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.*;
+import graphic.ImageLoader;
 
 public class StartScreen implements Screen{
 	
@@ -24,12 +25,10 @@ public class StartScreen implements Screen{
 	private GraphicsContext gc;
 	private VBox menu;
 	
-	
 	public StartScreen(Stage Primarystage) {
 		canvas=new Canvas(WIDTH, HEIGHT);
 		gc=canvas.getGraphicsContext2D();
 		setupMenu();
-		
 		primarystage = Primarystage ;
 		primarystage.setTitle("DPA");
 		primarystage.setResizable(false);
@@ -42,7 +41,7 @@ public class StartScreen implements Screen{
 	public void draw(GraphicsContext gc) {
 		Pane root=new Pane();
 		root.setPrefSize(WIDTH, HEIGHT);
-		gc.drawImage(START_SCREEN, 0, 0);
+		gc.drawImage(ImageLoader.START_SCREEN, 0, 0);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
 		
@@ -76,8 +75,8 @@ public class StartScreen implements Screen{
 		start.setPrefSize(120, 90);
 		exit.setPrefSize(120, 90);
 		//TODO:add font and color
-		start.setFont(mainFont);
-		exit.setFont(mainFont);
+		start.setFont(MAIN_FONT);
+		exit.setFont(MAIN_FONT);
 		start.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
 		exit.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px;");
 

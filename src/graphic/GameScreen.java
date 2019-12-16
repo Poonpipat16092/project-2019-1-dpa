@@ -67,7 +67,7 @@ public class GameScreen implements Screen {
 			public void handle(long current) {
 				spawn();
 				//reset background
-				gc.drawImage(GAME_SCREEN, 0, 0);
+				gc.drawImage(ImageLoader.GAME_SCREEN, 0, 0);
 				//handler with object
 				handler.draw(gc);
 				handler.tick();

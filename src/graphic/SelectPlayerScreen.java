@@ -27,7 +27,6 @@ public class SelectPlayerScreen implements Screen {
 	private HBox player,start;
 	private String selectedPlayer ;
 	
-	
 	public SelectPlayerScreen(Stage primarystage) {
 		// TODO Auto-generated constructor stub
 		canvas = new Canvas(WIDTH,HEIGHT);
@@ -83,11 +82,11 @@ public class SelectPlayerScreen implements Screen {
 		
 		
 		player1 = new Button();
-		player1.setGraphic(new ImageView(Player1));
+		player1.setGraphic(new ImageView(ImageLoader.Player1));
 		player1.setPrefSize(200,150);
 		
 		player2 = new Button();
-		player2.setGraphic(new ImageView(Player2));
+		player2.setGraphic(new ImageView(ImageLoader.Player2));
 		player2.setPrefSize(200, 150);
 		
 		player1.setStyle("-fx-background-color: #000000;");
