@@ -98,6 +98,7 @@ public class SelectPlayerScreen implements Screen {
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				if(selectedPlayer != "Player1" ) {
+					AudioLoader.BUTTON_CLICK.play();
 					player1.setStyle("-fx-background-color: #7FFFD4; ");
 					selectedPlayer = "Player1";
 					player2.setStyle("-fx-background-color: #000000; ");
@@ -110,6 +111,7 @@ public class SelectPlayerScreen implements Screen {
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				if(selectedPlayer != "Player2" ) {
+					AudioLoader.BUTTON_CLICK.play();
 					player2.setStyle("-fx-background-color: #7FFFD4; ");
 					selectedPlayer = "Player2";
 					player1.setStyle("-fx-background-color: #000000; ");
@@ -135,16 +137,19 @@ public class SelectPlayerScreen implements Screen {
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				if(selectedPlayer == "") {
+					AudioLoader.BUTTON_CLICK.play();
 					Alert alert = new Alert(AlertType.INFORMATION,"Please Select Player");
 					alert.showAndWait();
 					
 					return;
 				}
 				else {
+					AudioLoader.BUTTON_CLICK.play();
 					GameScreen game=new GameScreen(primarystage);
 					game.getPlayer().setPlayer(selectedPlayer);
 					game.startAnimation();
 					System.out.println(selectedPlayer);
+					AudioLoader.START_SONG.stopSong();
 				}
 			}
 		});

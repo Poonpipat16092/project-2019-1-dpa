@@ -6,17 +6,13 @@ import javafx.scene.media.MediaPlayer;
 
 public class AudioLoader {
 	
-	public static final AudioClip START_SCREEN_SOUND= new AudioClip(ClassLoader.getSystemResource("startScreenSound.mp3").toString());
 	public static final AudioClip MEGA_LASER = new AudioClip(ClassLoader.getSystemResource("megaLaser.wav").toString());
 	public static final AudioClip BUTTON_CLICK = new AudioClip(ClassLoader.getSystemResource("buttonclick.mp3").toString());
 	public static final AudioClip COLLECT_SUPPLY = new AudioClip(ClassLoader.getSystemResource("collectsupply.mp3").toString());
 	public static final AudioClip DIED = new AudioClip(ClassLoader.getSystemResource("died.mp3").toString());
 	public static final AudioClip ERRORR = new AudioClip(ClassLoader.getSystemResource("error.mp3").toString());
-<<<<<<< HEAD
-	public static final AudioClip BOSS_MUSIC = new AudioClip(ClassLoader.getSystemResource("BossMusic.mp3").toString());
-=======
-	public static final Image BOSSCHARGING=new Image("laserRedShot.png", 20, 20, false, true);
-	public static final Image BOSS=new Image("Boss.png", 400, 100, false, true);
 	
->>>>>>> cd33711118e89a4db5fdc71e2e1afa844a94a7d3
+	public static final Song START_SONG = new Song(1);
+	public static final Song NORMAL_SONG = new Song(2);
+	public static final Song BOSS_SONG = new Song(3);
 }

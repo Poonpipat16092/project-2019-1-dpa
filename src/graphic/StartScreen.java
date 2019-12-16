@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.*;
@@ -43,18 +44,9 @@ public class StartScreen implements Screen{
 		gc.drawImage(ImageLoader.START_SCREEN, 0, 0);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
-		if(!(AudioLoader.START_SCREEN_SOUND.isPlaying())) {
-			AudioLoader.START_SCREEN_SOUND.setVolume(0.5);
-			AudioLoader.START_SCREEN_SOUND.play();
-		}
-		
+		AudioLoader.START_SONG.playSong();
 		Scene scene = new Scene(root);
-		primarystage.setScene(scene);
-		
-		//add black background
-//		gc.setFill(Color.BLACK);
-//		gc.fillRect(0, 0, WIDTH, HEIGHT);
-				
+		primarystage.setScene(scene);	
 		
 		//add menu
 		root.getChildren().add(menu);
@@ -85,6 +77,7 @@ public class StartScreen implements Screen{
 
 		start.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
+				AudioLoader.BUTTON_CLICK.play();
 				SelectPlayerScreen selectedPlayer = new SelectPlayerScreen(primarystage);
 				selectedPlayer.startAnimation();
 				
@@ -94,6 +87,7 @@ public class StartScreen implements Screen{
 		exit.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
+				AudioLoader.BUTTON_CLICK.play();
 				Platform.exit();
 			}
 		});
