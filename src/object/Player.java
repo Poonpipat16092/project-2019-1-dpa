@@ -20,7 +20,8 @@ public class Player extends BattleshipObject {
 	private int playerNum;
 	public static final Image player1=new Image("player1.png",width,height,true,true);
 	public static final Image player2=new Image("player2.png",width,height,true,true);
-	private Image image;
+	public static final Image barrier=new Image("barrier.png",width,height,false,true);
+	private Image currentImage;
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler);
@@ -84,10 +85,9 @@ public class Player extends BattleshipObject {
 //		gc.fillRect(x+width/3,y,width/3, height-5);
 //		gc.fillRect(x,y+height/3,width, height/4);
 		if(barrierOn) {
-			gc.setFill(Color.BLUE);
-			gc.fillOval(x, y, height, height);
+			gc.drawImage(barrier, x, y);
 		}
-		gc.drawImage(image, x, y);
+		gc.drawImage(currentImage, x, y);
 		//check hp
 	}
 	
@@ -138,10 +138,10 @@ public class Player extends BattleshipObject {
 	
 	public void setPlayer(String player) {
 		if(player=="Player1") {
-			image=player1;
+			currentImage=player1;
 		}
 		if(player=="Player2") {
-			image=player2;
+			currentImage=player2;
 		}
 	}
 	
