@@ -12,8 +12,6 @@ import graphic.SelectPlayerScreen;
 public class Main extends Application {
 
 	public static void main(String[] args) {
-		new AudioLoader();
-		new ImageLoader();
 		launch(args);
 	}
 

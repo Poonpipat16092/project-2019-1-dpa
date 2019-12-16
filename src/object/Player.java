@@ -13,7 +13,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends BattleshipObject {
-	private int hp;
 	private boolean barrierOn;
 	private int shootMode=-1;
 	private int selfTimer=0;
@@ -24,7 +23,7 @@ public class Player extends BattleshipObject {
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler,70,70);
 		setDamage(1);
-		hp=10;
+		hp=1000;
 		barrierOn=false;
 		velX=0;
 		velY=0;

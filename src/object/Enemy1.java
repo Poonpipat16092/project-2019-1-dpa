@@ -8,7 +8,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy1 extends BattleshipObject {
-	private int hp;
 	
 	public Enemy1(ObjectHandler handler) {
 		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler,50,50);
@@ -24,7 +23,6 @@ public class Enemy1 extends BattleshipObject {
 	@Override
 	public void tick() {
 		//remove this when out of frame
-		checkShow();
 		if(!isShow) return;
 		x+=velX;
 		y+=velY;

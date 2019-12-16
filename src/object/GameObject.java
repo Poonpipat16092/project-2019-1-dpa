@@ -77,10 +77,6 @@ public abstract class GameObject {
 		return id;
 	}
 
-	public void setId(ID id) {
-		this.id = id;
-	}
-
 	public boolean isShow() {
 		return isShow;
 	}

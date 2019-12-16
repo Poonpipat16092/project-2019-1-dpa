@@ -6,8 +6,7 @@ import javafx.scene.shape.Shape;
 
 public abstract class BattleshipObject extends GameObject implements Damagable {
 	protected int damage;
-	protected int score=0;
-	private int hp;
+	protected int hp;
 	
 	public abstract void collision();
 	
@@ -33,6 +32,8 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 		return sin;
 	}
 	
+	
+	
 	public int getDamage() {
 		return damage;
 	}
@@ -40,5 +41,14 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
 
 }

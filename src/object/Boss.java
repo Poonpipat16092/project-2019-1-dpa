@@ -11,7 +11,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Boss extends BattleshipObject {
-	private int hp;
 	private boolean timerStart=false;
 	private boolean ultimate=false;
 	public int selfTimer=0;

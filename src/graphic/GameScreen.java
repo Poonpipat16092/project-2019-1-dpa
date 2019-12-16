@@ -232,6 +232,8 @@ public class GameScreen implements Screen {
 				Enemy1 enemy = new Enemy1(handler);
 			}
 			if(stageTime==100) {
+				AudioLoader.NORMAL_SONG.stopSong();
+				AudioLoader.BOSS_SONG.playSong();
 				boss=new Boss(handler);
 				bossSpawn=true;
 			}
@@ -279,6 +281,7 @@ public class GameScreen implements Screen {
 		
 	@Override
 	public void startAnimation() {
+		AudioLoader.NORMAL_SONG.playSong();
 		draw(gc);
 	}
 	
@@ -290,6 +293,7 @@ public class GameScreen implements Screen {
 			end.startAnimation();
 		}
 		if(stage==5 && haveBossspawn() && !boss.isShow()) {
+			AudioLoader.BOSS_SONG.stopSong();;
 			AudioLoader.CONGRAT.play();
 			bossSpawn=false;
 			//for Winner scene
