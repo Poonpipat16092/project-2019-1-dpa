@@ -37,7 +37,7 @@ public class supplyHealth extends SupplyObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-					collectSupply.play();
+//					collectSupply.play();
 					((Player) temp).getHealth(1);
 					setShow(false);
 				}
