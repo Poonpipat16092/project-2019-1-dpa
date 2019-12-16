@@ -37,7 +37,6 @@ public class StartScreen implements Screen{
 		primarystage.setResizable(false);
 		primarystage.setWidth(WIDTH);
 		primarystage.setHeight(HEIGHT);
-	
 	}
 	
 	@Override
@@ -47,6 +46,10 @@ public class StartScreen implements Screen{
 		gc.drawImage(ImageLoader.START_SCREEN, 0, 0);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
+		if(!(AudioLoader.START_SCREEN_SOUND.isPlaying())) {
+			AudioLoader.START_SCREEN_SOUND.setVolume(0.5);
+			AudioLoader.START_SCREEN_SOUND.play();
+		}
 		
 		Scene scene = new Scene(root);
 		primarystage.setScene(scene);
