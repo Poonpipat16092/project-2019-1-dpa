@@ -3,7 +3,7 @@ package object;
 import java.util.List;
 import java.util.Random;
 
-import graphic.EndScreen;
+import graphic.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;

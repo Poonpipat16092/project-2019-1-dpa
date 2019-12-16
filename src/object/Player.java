@@ -2,7 +2,7 @@ package object;
 
 
 import graphic.AudioLoader;
-import graphic.EndScreen;
+import graphic.GameScreen;
 import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

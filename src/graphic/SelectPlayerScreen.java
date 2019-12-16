@@ -145,7 +145,7 @@ public class SelectPlayerScreen implements Screen {
 				}
 				else {
 					AudioLoader.BUTTON_CLICK.play();
-					EndScreen game=new EndScreen(primarystage);
+					GameScreen game=new GameScreen(primarystage);
 					game.getPlayer().setPlayer(selectedPlayer);
 					game.startAnimation();
 					System.out.println(selectedPlayer);
