@@ -287,15 +287,19 @@ public class GameScreen implements Screen {
 	
 	public void isGameOver() {
 		if(!player.isShow()) {
+			boolean isWin = false;
 			AudioLoader.DIED.play();
 			timer.stop();
-			GameOverScreen end = new GameOverScreen(primarystage);
+			EndScreen end = new EndScreen(primarystage, isWin);
 			end.startAnimation();
 		}
 		if(stage==5 && haveBossspawn() && !boss.isShow()) {
 			AudioLoader.BOSS_SONG.stopSong();;
+			boolean isWin = true ;
 			AudioLoader.CONGRAT.play();
 			bossSpawn=false;
+			EndScreen end = new EndScreen(primarystage, isWin);
+			end.startAnimation();
 			//for Winner scene
 		}
 	}

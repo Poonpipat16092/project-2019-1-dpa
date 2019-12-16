@@ -1,7 +1,7 @@
 package application;
 
 import graphic.AudioLoader;
-import graphic.GameOverScreen;
+import graphic.EndScreen;
 import graphic.ImageLoader;
 import graphic.StartScreen;
 import javafx.application.Application;
