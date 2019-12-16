@@ -1,5 +1,7 @@
 package object;
 
+import graphic.AudioLoader;
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -7,7 +9,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class SupplyHealth extends SupplyObject {
-	public static final Image healthIcon=new Image("healthIcon.png", 30, 30, false, true);
 
 	
 	public SupplyHealth(ObjectHandler handler){
@@ -30,14 +31,14 @@ public class SupplyHealth extends SupplyObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.drawImage(healthIcon, x, y);
+		gc.drawImage(ImageLoader.HEALTH_ICON, x, y);
 	}
 	
 	public void collision() {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
-//					collectSupply.play();
+					AudioLoader.COLLECT_SUPPLY.play();
 					((Player) temp).getHealth(1);
 					getHit(temp);
 				}

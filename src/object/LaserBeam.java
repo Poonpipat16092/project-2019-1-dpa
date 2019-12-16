@@ -1,5 +1,6 @@
 package object;
 
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -9,7 +10,6 @@ import javafx.scene.shape.Shape;
 public class LaserBeam extends BulletObject {
 	private Boss boss;
 	private int timer;
-	public static final Image LASERBEAM=new Image("MeagaLaser.jpg", 100, 700, false, true);
 	
 	public LaserBeam(Boss boss,ObjectHandler handler) {
 		super(boss.getX()+boss.width/2-50,boss.getY()+boss.height, ID.Boss, handler,100,700);
@@ -35,7 +35,7 @@ public class LaserBeam extends BulletObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.drawImage(LASERBEAM, x, y);
+		gc.drawImage(ImageLoader.BOSS_LASERBEAM, x, y);
 	}
 
 	@Override

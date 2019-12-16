@@ -1,9 +1,12 @@
 package object;
 
 
+import graphic.AudioLoader;
 import graphic.GameScreen;
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -16,15 +19,12 @@ public class Player extends BattleshipObject {
 	private int selfTimer=0;
 	private int modeTimer=0;
 	private int playerNum;
-	public static final Image player1=new Image("player1.png",70,70,true,true);
-	public static final Image player2=new Image("player2.png",70,70,true,true);
-	public static final Image barrier=new Image("barrier.png",70,70,false,true);
 	private Image currentImage;
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler,70,70);
 		setDamage(1);
-		hp=10000;
+		hp=10;
 		barrierOn=false;
 		velX=0;
 		velY=0;
@@ -83,7 +83,7 @@ public class Player extends BattleshipObject {
 //		gc.fillRect(x+width/3,y,width/3, height-5);
 //		gc.fillRect(x,y+height/3,width, height/4);
 		if(barrierOn) {
-			gc.drawImage(barrier, x, y);
+			gc.drawImage(ImageLoader.BARRIER, x, y);
 		}
 		gc.drawImage(currentImage, x, y);
 		//check hp
@@ -136,10 +136,10 @@ public class Player extends BattleshipObject {
 	
 	public void setPlayer(String player) {
 		if(player=="Player1") {
-			currentImage=player1;
+			currentImage=ImageLoader.INGAME_PLAYER1;
 		}
 		if(player=="Player2") {
-			currentImage=player2;
+			currentImage=ImageLoader.INGAME_PLAYER2;
 		}
 	}
 	
