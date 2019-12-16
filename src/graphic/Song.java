@@ -16,7 +16,7 @@ public class Song {
 		switch (music) {
 		case 1: url = "startScreenSound.mp3";
 			break ;
-		case 2: url = "BossMusic.mp3";
+		case 2: url = "normalsong.mp3";
 			break ;
 		case 3: url = "BossMusic.mp3";
 			break ;
