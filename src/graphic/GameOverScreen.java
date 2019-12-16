@@ -27,7 +27,7 @@ public class GameOverScreen implements Screen {
 		canvas = new Canvas(WIDTH,HEIGHT) ;
 		gc = canvas.getGraphicsContext2D();
 		
-		this.score=GameScreen.getHud().getScore();
+		this.score=EndScreen.getHud().getScore();
 		this.primarystage = primarystage;
 		
 	}

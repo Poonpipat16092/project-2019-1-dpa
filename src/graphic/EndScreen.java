@@ -25,7 +25,7 @@ import object.SupplyBarrier;
 import object.SupplyBullet;
 import object.SupplyHealth;
 
-public class GameScreen implements Screen {
+public class EndScreen implements Screen {
 	private Stage primarystage;
 	private Canvas canvas;
 	private GraphicsContext gc;
@@ -41,7 +41,7 @@ public class GameScreen implements Screen {
 	private boolean[] keyDown;
 	private boolean pause = false ;
 	
-	public GameScreen(Stage Primarystage) {
+	public EndScreen(Stage Primarystage) {
 		primarystage=Primarystage;
 		canvas=new Canvas(WIDTH,HEIGHT);
 		gc=canvas.getGraphicsContext2D();

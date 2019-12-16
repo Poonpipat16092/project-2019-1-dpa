@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import graphic.GameHud;
-import graphic.GameScreen;
+import graphic.EndScreen;
 import javafx.scene.canvas.GraphicsContext;
 
 public class ObjectHandler {
@@ -37,7 +37,7 @@ public class ObjectHandler {
 	public void removeNotShow() {
 		for(int i=0;i<objects.size();i++) {
 			if(objects.get(i).isShow()==false) {
-				GameScreen.getHud().addScore(objects.get(i).getScore());
+				EndScreen.getHud().addScore(objects.get(i).getScore());
 				objects.remove(i);
 			}
 		}

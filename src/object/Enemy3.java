@@ -1,7 +1,7 @@
 package object;
 
 
-import graphic.GameScreen;
+import graphic.EndScreen;
 import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
