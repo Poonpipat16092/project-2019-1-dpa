@@ -7,8 +7,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class supplyBullet extends SupplyObject {
-	public static final int width=20;
-	public static final int height=20;
 	public static final Image greensupply=new Image("greenSupply.png", width, height, false, true);
 	public static final Image bluesupply=new Image("blueSupply.png", width, height, false, true);
 	private int mode;
@@ -37,10 +35,10 @@ public class supplyBullet extends SupplyObject {
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(mode==0) {
-			gc.drawImage(greensupply, x, y);
+			gc.drawImage(bluesupply, x, y);
 		}
 		if(mode==1) {
-			gc.drawImage(bluesupply, x, y);
+			gc.drawImage(greensupply, x, y);
 		}
 	}
 	

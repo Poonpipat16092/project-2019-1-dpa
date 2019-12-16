@@ -12,7 +12,7 @@ public class BossBullet extends BulletObject {
 	public static final int width=20;
 	public static final int height=20;
 	public int state;
-	//public static final Image image=	
+	public static final Image BossNormalBullet=new Image("BossNormalBullet.png", width, height, false, true);
 	
 	public BossBullet(double x,double y,int damage,ObjectHandler handler,int state) {
 		super(x, y, ID.Boss, handler);
@@ -42,8 +42,9 @@ public class BossBullet extends BulletObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		gc.setFill(Color.WHITE);
-		gc.fillRect(x, y, width, height);
+//		gc.setFill(Color.WHITE);
+//		gc.fillRect(x, y, width, height);
+		gc.drawImage(BossNormalBullet, x, y);
 	}
 
 	@Override

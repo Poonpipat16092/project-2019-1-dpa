@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="res/audio/effect"/>
+	<classpathentry excluding="effect/" kind="src" path="res/audio"/>
 	<classpathentry kind="src" path="res/image"/>
 	<classpathentry kind="src" path="res/font"/>
-	<classpathentry excluding="image/|font/|image/" kind="src" path="res"/>
+	<classpathentry excluding="image/|font/|image/|audio/|audio/effect/" kind="src" path="res"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>

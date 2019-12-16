@@ -7,8 +7,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class supplyHealth extends SupplyObject {
-	public static final int width=20;
-	public static final int height=20;
 	public static final Image healthIcon=new Image("healthIcon.png", width, height, false, true);
 
 	
@@ -39,6 +37,7 @@ public class supplyHealth extends SupplyObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
+					collectSupply.play();
 					((Player) temp).getHealth(1);
 					setShow(false);
 				}

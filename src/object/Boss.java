@@ -10,7 +10,7 @@ import javafx.scene.shape.Shape;
 public class Boss extends BattleshipObject {
 	public static final int width=400;
 	public static final int height=100;
-	public static final Image bossCharging=new Image("laserRedShot.png", width, height, false, true);
+	public static final Image bossCharging=new Image("laserRedShot.png", 20, 20, false, true);
 	public static final Image boss=new Image("Boss.png", width, height, false, true);
 	private int hp;
 	private boolean timerStart=false;
@@ -84,7 +84,10 @@ public class Boss extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		if(selfTimer>=800) gc.drawImage(bossCharging, x, y);
+		if(!ultimate && selfTimer>=800) {
+			gc.drawImage(bossCharging, x+width/2-30, y+height);
+			gc.drawImage(bossCharging, x+width/2+10, y+height);
+		}
 		gc.drawImage(boss, x, y);
 	}
 
