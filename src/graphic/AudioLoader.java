@@ -16,4 +16,7 @@ public class AudioLoader {
 	public static final AudioClip CONGRAT = new AudioClip(ClassLoader.getSystemResource("congratulation.mp3").toString());
 	public static final AudioClip BOSS_MUSIC = new AudioClip(ClassLoader.getSystemResource("BossMusic.mp3").toString());
 	
+	public AudioLoader() {
+	}
+	
 }
