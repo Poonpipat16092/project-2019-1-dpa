@@ -11,18 +11,14 @@ public class AudioLoader {
 	public static final AudioClip COLLECT_SUPPLY = new AudioClip(ClassLoader.getSystemResource("collectsupply.mp3").toString());
 	public static final AudioClip DIED = new AudioClip(ClassLoader.getSystemResource("died.mp3").toString());
 	public static final AudioClip ERRORR = new AudioClip(ClassLoader.getSystemResource("error.mp3").toString());
-<<<<<<< HEAD
+	
+	public static final AudioClip NEXT_STAGE = new AudioClip(ClassLoader.getSystemResource("nextstage.mp3").toString());
+	public static final AudioClip CONGRAT = new AudioClip(ClassLoader.getSystemResource("congratulation.mp3").toString());
 	
 	public static final Song START_SONG = new Song(1);
 	public static final Song NORMAL_SONG = new Song(2);
 	public static final Song BOSS_SONG = new Song(3);
-=======
-	public static final AudioClip NEXT_STAGE = new AudioClip(ClassLoader.getSystemResource("nextstage.mp3").toString());
-	public static final AudioClip CONGRAT = new AudioClip(ClassLoader.getSystemResource("congratulation.mp3").toString());
-	public static final AudioClip BOSS_MUSIC = new AudioClip(ClassLoader.getSystemResource("BossMusic.mp3").toString());
 	
 	public AudioLoader() {
 	}
-	
->>>>>>> 92759a01bab369a94a349d72feb176b1c96e8805
 }

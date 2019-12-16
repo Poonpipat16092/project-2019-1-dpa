@@ -11,10 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-<<<<<<< HEAD
-=======
 import javafx.scene.media.Media;
->>>>>>> 92759a01bab369a94a349d72feb176b1c96e8805
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
