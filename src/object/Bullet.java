@@ -1,6 +1,7 @@
 package object;
 
 
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -8,10 +9,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Bullet extends BulletObject {
-	public static final Image playerLaser=new Image("laserBlue02.png",10,20,true,true);
-	public static final Image playerLaser2=new Image("laserGreen.png",10,20,true,true);
-	public static final Image enemyLaser=new Image("laserRed.png",10,20,true,true);
-	
 	
 	public Bullet(double x,double y,int velX,int velY,ID id,int damage,ObjectHandler handler) {
 		super(x, y, id, handler,10,20);
@@ -43,12 +40,12 @@ public class Bullet extends BulletObject {
 		if(!isShow) return;
 		if(id==ID.Player) {
 			if(getDamage()==2) {
-				gc.drawImage(playerLaser2, x, y);
+				gc.drawImage(ImageLoader.PLAYER_LASER, x, y);
 			}
-			else gc.drawImage(playerLaser, x, y);
+			else gc.drawImage(ImageLoader.PLAYER_LASER2, x, y);
 		}
 		if(id==ID.Enemy||id==ID.Boss) {
-			gc.drawImage(enemyLaser, x, y);
+			gc.drawImage(ImageLoader.ENEMY_LASER, x, y);
 		}
 	}
 

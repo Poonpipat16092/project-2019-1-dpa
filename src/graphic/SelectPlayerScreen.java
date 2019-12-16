@@ -82,11 +82,11 @@ public class SelectPlayerScreen implements Screen {
 		
 		
 		player1 = new Button();
-		player1.setGraphic(new ImageView(ImageLoader.Player1));
+		player1.setGraphic(new ImageView(ImageLoader.PLAYER1));
 		player1.setPrefSize(200,150);
 		
 		player2 = new Button();
-		player2.setGraphic(new ImageView(ImageLoader.Player2));
+		player2.setGraphic(new ImageView(ImageLoader.PLAYER2));
 		player2.setPrefSize(200, 150);
 		
 		player1.setStyle("-fx-background-color: #000000;");

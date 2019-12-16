@@ -2,6 +2,7 @@ package object;
 
 
 import graphic.GameScreen;
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -9,7 +10,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy3 extends BattleshipObject {
-	public static final Image image=new Image("ufoRed.png", 50, 50, false, true);
 	public int speed=4;
 	public int hp;
 	
@@ -34,7 +34,7 @@ public class Enemy3 extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(isShow()==false) return;
-		gc.drawImage(image, x, y);
+		gc.drawImage(ImageLoader.ENEMY3, x, y);
 //		gc.setFill(Color.PURPLE);
 //		gc.fillRect(x, y, width , height);
 	}

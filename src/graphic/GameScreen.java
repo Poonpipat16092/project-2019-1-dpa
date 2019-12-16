@@ -283,6 +283,7 @@ public class GameScreen implements Screen {
 	
 	public void isGameOver() {
 		if(!player.isShow()) {
+			AudioLoader.DIED.play();
 			timer.stop();
 			GameOverScreen end = new GameOverScreen(primarystage);
 			end.startAnimation();

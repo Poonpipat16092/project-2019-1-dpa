@@ -1,5 +1,6 @@
 package object;
 
+import graphic.AudioLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -46,6 +47,7 @@ public class SupplyBullet extends SupplyObject {
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.id==ID.Player && temp.getZ()==0) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
+					AudioLoader.COLLECT_SUPPLY.play();
 					((Player) temp).setMode(mode);
 					getHit(this);;
 				}

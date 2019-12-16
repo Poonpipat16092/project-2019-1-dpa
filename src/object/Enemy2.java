@@ -1,6 +1,8 @@
 package object;
 
 import java.util.Random;
+
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -8,9 +10,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy2 extends BattleshipObject {
-	public static final Image image=new Image("enemy2.png",60,90,false,true);
 	private int hp;
 	private int selfTimer=0;
+	
 	public Enemy2(ObjectHandler handler) {
 		super(random.nextInt(800-60),random.nextInt(200)-400,ID.Enemy,handler,60,90);
 		setDamage(1);
@@ -60,7 +62,7 @@ public class Enemy2 extends BattleshipObject {
 		if(!isShow) return;
 //		gc.setFill(Color.BLUE);
 //		gc.fillRect(x, y, width, height);
-		gc.drawImage(image, x, y);
+		gc.drawImage(ImageLoader.ENEMY2, x, y);
 	}
 
 	@Override

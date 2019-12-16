@@ -1,6 +1,9 @@
 package object;
 
 import java.util.Random;
+
+import graphic.AudioLoader;
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -8,12 +11,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Boss extends BattleshipObject {
-	public static final Image bossCharging=new Image("laserRedShot.png", 20, 20, false, true);
-	public static final Image boss=new Image("Boss.png", 400, 100, false, true);
 	private int hp;
 	private boolean timerStart=false;
 	private boolean ultimate=false;
 	public int selfTimer=0;
+	
 	public Boss(ObjectHandler handler) {
 		super(200,-100,ID.Boss,handler,400,100);
 		setDamage(2);
@@ -68,6 +70,7 @@ public class Boss extends BattleshipObject {
 		if(ultimate==true) return;
 		if(selfTimer>=1000) {
 			ultimate=true;
+			AudioLoader.MEGA_LASER.play();
 			new LaserBeam(this,handler);
 			return;
 		}
@@ -83,10 +86,10 @@ public class Boss extends BattleshipObject {
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(!ultimate && selfTimer>=800) {
-			gc.drawImage(bossCharging, x+width/2-30, y+height);
-			gc.drawImage(bossCharging, x+width/2+10, y+height);
+			gc.drawImage(ImageLoader.BOSS_CHARGING, x+width/2-30, y+height);
+			gc.drawImage(ImageLoader.BOSS_CHARGING, x+width/2+10, y+height);
 		}
-		gc.drawImage(boss, x, y);
+		gc.drawImage(ImageLoader.BOSS, x, y);
 	}
 
 	public void setupSpeed() {

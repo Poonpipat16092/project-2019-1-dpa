@@ -1,6 +1,7 @@
 package object;
 
 
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -10,7 +11,6 @@ import javafx.scene.shape.Shape;
 
 public class BossBullet extends BulletObject {
 	public int state;
-	public static final Image BossNormalBullet=new Image("BossNormalBullet.png", 20, 20, false, true);
 	
 	public BossBullet(double x,double y,int damage,ObjectHandler handler,int state) {
 		super(x, y, ID.Boss, handler,20,20);
@@ -42,7 +42,7 @@ public class BossBullet extends BulletObject {
 		if(!isShow) return;
 //		gc.setFill(Color.WHITE);
 //		gc.fillRect(x, y, width, height);
-		gc.drawImage(BossNormalBullet, x, y);
+		gc.drawImage(ImageLoader.BOSS_NORMAL_BULLET, x, y);
 	}
 
 	@Override
