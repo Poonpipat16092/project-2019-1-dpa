@@ -18,7 +18,4 @@ public class AudioLoader {
 	public static final Song START_SONG = new Song(1);
 	public static final Song NORMAL_SONG = new Song(2);
 	public static final Song BOSS_SONG = new Song(3);
-	
-	public AudioLoader() {
-	}
 }

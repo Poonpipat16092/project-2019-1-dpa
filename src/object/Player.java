@@ -13,18 +13,17 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Player extends BattleshipObject {
-	private boolean barrierOn;
+	private boolean isBarrier;
 	private int shootMode=-1;
-	private int selfTimer=0;
+	private int gunTimer=0;
 	private int modeTimer=0;
-	private int playerNum;
 	private Image currentImage;
 
 	public Player(ObjectHandler handler) {
 		super(400,500,ID.Player,handler,70,70);
 		setDamage(1);
-		hp=1000;
-		barrierOn=false;
+		hp=10;
+		isBarrier=false;
 		velX=0;
 		velY=0;
 		limitX=800;
@@ -45,7 +44,7 @@ public class Player extends BattleshipObject {
 		if(y>=limitY-height*4/3) y=limitY-height*4/3;
 
 		collision();
-		selfTimer++;
+		gunTimer++;
 	}
 	
 	public void collision() {
@@ -66,13 +65,14 @@ public class Player extends BattleshipObject {
 	}
 	
 	public void getHit(GameObject object) {
-		if(barrierOn) barrierOn=false;
+		if(isBarrier) isBarrier=false;
 		else hp-=((Damagable) object).getDamage();
 		checkShow();
 	}
 	
 	public void getHealth(int health) {
 		hp+=health;
+		if(hp>15) hp=15;
 	}
 	
 	@Override
@@ -81,7 +81,7 @@ public class Player extends BattleshipObject {
 //		gc.setFill(Color.WHITE);
 //		gc.fillRect(x+width/3,y,width/3, height-5);
 //		gc.fillRect(x,y+height/3,width, height/4);
-		if(barrierOn) {
+		if(isBarrier) {
 			gc.drawImage(ImageLoader.BARRIER, x, y);
 		}
 		gc.drawImage(currentImage, x, y);
@@ -94,45 +94,35 @@ public class Player extends BattleshipObject {
 			modeTimer=0;
 		}
 		if(shootMode==-1) {
-			if(selfTimer>=20) {
+			if(gunTimer>=20) {
 				Bullet bullet=new Bullet(x+width/2, y,0,-7,id,1,handler);
-				selfTimer=0;
+				gunTimer=0;
 			}
 		}
 		else if(shootMode==0) {
-			if(selfTimer>=15) {
+			if(gunTimer>=15) {
 				Bullet bullet1=new Bullet(x+width/2, y,1,-7,id,1,handler);	
 				Bullet bullet2=new Bullet(x+width/2, y,0,-7,id,1,handler);
 				Bullet bullet3=new Bullet(x+width/2, y,-1,-7,id,1,handler);
-				selfTimer=0;
+				gunTimer=0;
 				modeTimer++;
 			}
 		}
 		else if(shootMode==1) {
-			if(selfTimer>=15) {
+			if(gunTimer>=15) {
 				Bullet bullet1=new Bullet(x+width/2+10, y,0,-7,id,2,handler);
 				Bullet bullet2=new Bullet(x+width/2-10, y,0,-7,id,2,handler);
-				selfTimer=0;
+				gunTimer=0;
 				modeTimer++;
 			}
 		}
 		
 	}
-		
-	public void checkShow() {
-		if(hp<=0) {
-			setShow(false);
-		}
-	}
-
+	
 	public int getZ() {
 		return 0;
 	}
-	
-	public int getHp() {
-		return hp;
-	}
-	
+		
 	public void setPlayer(String player) {
 		if(player=="Player1") {
 			currentImage=ImageLoader.INGAME_PLAYER1;
@@ -152,8 +142,13 @@ public class Player extends BattleshipObject {
 		}
 	
 	public void setBarrier(boolean on) {
-		barrierOn=on;
+		isBarrier=on;
 	}
+	
+	public boolean isBarrier() {
+		return isBarrier;
+	}
+
 	public void setMode(int mode){
 		shootMode=mode;
 		modeTimer=0;

@@ -10,6 +10,13 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 	
 	public abstract void collision();
 	
+	@Override
+	public void getHit(GameObject object) {
+		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
+		checkShow();
+	}
+
+	
 	public BattleshipObject(double x,double y,ID id,ObjectHandler handler,int width,int height) {
 		super(x,y,id,handler,width,height);
 		this.width=width;
@@ -32,7 +39,10 @@ public abstract class BattleshipObject extends GameObject implements Damagable {
 		return sin;
 	}
 	
-	
+	@Override
+	public void checkShow() {
+		if(hp<=0) setShow(false);
+	}
 	
 	public int getDamage() {
 		return damage;

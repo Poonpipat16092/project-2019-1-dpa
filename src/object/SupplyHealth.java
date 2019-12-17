@@ -20,14 +20,7 @@ public class SupplyHealth extends SupplyObject {
 		handler.addObject(this);
 	}
 
-	@Override
-	public void tick() {
-		checkShow();
-		if(isShow()==false) return;
-		y+=velY;
-		collision();
-	}
-
+	
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
@@ -49,11 +42,6 @@ public class SupplyHealth extends SupplyObject {
 	@Override
 	public int getZ() {
 		return 2;
-	}
-
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
 	}
 
 	@Override

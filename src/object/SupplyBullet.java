@@ -25,14 +25,6 @@ public class SupplyBullet extends SupplyObject {
 	}
 
 	@Override
-	public void tick() {
-		checkShow();
-		if(isShow()==false) return;
-		y+=velY;
-		collision();
-	}
-
-	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(mode==0) {
@@ -60,10 +52,6 @@ public class SupplyBullet extends SupplyObject {
 		return 2;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
-	}
 
 	@Override
 	public void getHit(GameObject object) {

@@ -24,9 +24,7 @@ public class LaserBeam extends BulletObject {
 	@Override
 	public void tick() {
 		if(!isShow) return;
-		if(timer>=200) {
-			isShow=false;
-		}
+		checkShow();
 		x=boss.getX()+boss.width/2-width/2;
 		y=boss.getY()+boss.height;
 		timer++;
@@ -43,17 +41,14 @@ public class LaserBeam extends BulletObject {
 		return 5;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		Rectangle rectangle=new Rectangle(x,y,width,height);
-		return rectangle;
-	}
-	
+		
 	public void getHit(GameObject object) {
-		checkShow();
+		
 	}
 		
 	public void checkShow() {
-
+		if(timer>=200) {
+			isShow=false;
+		}
 	}
 }

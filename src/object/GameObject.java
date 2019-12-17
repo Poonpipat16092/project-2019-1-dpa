@@ -12,7 +12,7 @@ import javafx.scene.shape.Shape;
 public abstract class GameObject {
 	
 	protected double x,y;//location
-	protected int velX,velY;//speed per frame
+	protected double velX,velY;//speed per frame
 	protected int width,height;
 	protected ID id;
 	protected int limitX;
@@ -35,11 +35,12 @@ public abstract class GameObject {
 	public abstract void tick();
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
-	public abstract Shape getBounds();
 	public abstract void getHit(GameObject object);
 	public abstract void checkShow();
 	
-
+	public Shape getBounds() {
+		return new Rectangle(x,y,width,height);
+	}
 	
 	public double getX() {
 		return x;
@@ -57,19 +58,19 @@ public abstract class GameObject {
 		this.y = y;
 	}
 
-	public int getVelX() {
+	public double getVelX() {
 		return velX;
 	}
 
-	public void setVelX(int velX) {
+	public void setVelX(double velX) {
 		this.velX = velX;
 	}
 
-	public int getVelY() {
+	public double getVelY() {
 		return velY;
 	}
 
-	public void setVelY(int velY) {
+	public void setVelY(double velY) {
 		this.velY = velY;
 	}
 

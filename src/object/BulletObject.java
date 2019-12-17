@@ -21,7 +21,6 @@ public abstract class BulletObject extends GameObject implements Damagable{
 	public abstract void tick();
 	public abstract void draw(GraphicsContext gc);
 	public abstract int getZ();
-	public abstract Shape getBounds();
 	public abstract void checkShow();
 
 }

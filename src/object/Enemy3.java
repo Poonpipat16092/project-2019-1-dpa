@@ -10,13 +10,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy3 extends BattleshipObject {
-	public int speed=4;
-	public int hp;
+	public int totalSpeed;
 	
 	public Enemy3(ObjectHandler handler){
 		super(random.nextInt(800),random.nextInt(200)-300,ID.Enemy,handler,50,50);
 		setDamage(1);
 		setScore(50);
+		setTotalSpeed(4);
 		hp=2;
 		limitX=800;
 		limitY=700;
@@ -26,9 +26,11 @@ public class Enemy3 extends BattleshipObject {
 	@Override
 	public void tick() {
 		if(isShow()==false) return;
-		x+=speed*cos();
-		y+=speed*sin();
+		setSpeed();
+		x+=velX;
+		y+=velY;
 		collision();
+		checkShow();
 	}
 
 	@Override
@@ -55,24 +57,20 @@ public class Enemy3 extends BattleshipObject {
 		return 1;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
+		
+	public void setSpeed() {
+		velX=totalSpeed*cos();
+		velY=totalSpeed*sin();
 	}
 
-	@Override
-	public void getHit(GameObject object) {
-		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
-		checkShow();
+	public int getTotalSpeed() {
+		return totalSpeed;
 	}
 
-	@Override
-	public void checkShow() {
-		if(hp<=0) setShow(false);
-		if(y>limitY) {
-			this.setShow(false);
-			return;
-		}
+	public void setTotalSpeed(int totalSpeed) {
+		this.totalSpeed = totalSpeed;
 	}
+
+		
 
 }

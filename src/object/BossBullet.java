@@ -10,7 +10,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class BossBullet extends BulletObject {
-	public int state;
+	private int state;
 	
 	public BossBullet(double x,double y,int damage,ObjectHandler handler,int state) {
 		super(x, y, ID.Boss, handler,20,20);
@@ -25,14 +25,7 @@ public class BossBullet extends BulletObject {
 	@Override
 	public void tick() {
 		if(!isShow) return;
-		if(y<0 || y>limitY) {
-			this.setShow(false);
-			return;
-		}
-		if(x<0 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
+		checkShow();
 		x+=velX;
 		y+=velY;
 	}
@@ -50,14 +43,8 @@ public class BossBullet extends BulletObject {
 		return 1;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		Rectangle rectangle=new Rectangle(x,y,width,height);
-		return rectangle;
-	}
-	
 	public void getHit(GameObject object) {
-		checkShow();
+		setShow(false);
 	}
 		
 	public void setVel() {
@@ -76,6 +63,14 @@ public class BossBullet extends BulletObject {
 	}
 	
 	public void checkShow() {
-		setShow(false);
+		if(y<0 || y>limitY) {
+			this.setShow(false);
+			return;
+		}
+		if(x<0 || x>limitX) {
+			this.setShow(false);
+			return;
+		}
+
 	}
 }

@@ -53,12 +53,7 @@ public class Enemy1 extends BattleshipObject {
 		}
 		
 	}
-	
-	public void getHit(GameObject object) {
-		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
-		checkShow();
-	}
-	
+		
 	public void checkShow() {
 		if(hp<=0) setShow(false);
 		if(x<-50 || x>limitX) {
@@ -80,11 +75,7 @@ public class Enemy1 extends BattleshipObject {
 		}
 		velY=8;
 	}
-	
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
-	}
-	
+		
 	public int getZ() {
 		return 0;
 	}

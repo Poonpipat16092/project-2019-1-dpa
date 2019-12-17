@@ -10,11 +10,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Enemy2 extends BattleshipObject {
-	private int hp;
-	private int selfTimer=0;
+	private int gunTimer=0;
 	
 	public Enemy2(ObjectHandler handler) {
-		super(random.nextInt(800-60),random.nextInt(200)-400,ID.Enemy,handler,60,90);
+		super(random.nextInt(800-61),random.nextInt(200)-400,ID.Enemy,handler,60,90);
 		setDamage(1);
 		setScore(50);
 		hp=2;
@@ -29,19 +28,18 @@ public class Enemy2 extends BattleshipObject {
 	public void tick() {
 		checkShow();
 		if(!isShow) return;
+		setSpeed();
 		x+=velX;
 		y+=velY;
-		if(x<0) x=0;
-		if(x>limitX) x=limitX;
-		if(x>=limitX-width || x<=0) velX*=-1; 
-		if(y>limitY) y=limitY;
+		if(x<=0) x=0;
+		if(x>=limitX-width) x=limitX-width;
+		if(y>=limitY) y=limitY;
 		shooting();
 		collision();
-		selfTimer++;
+		gunTimer++;
 	}
 
 	public void collision() {
-		//when being hit //can minimize round with getZ to only check some Z
 		for(GameObject temp:handler.getObjects()) {
 			if(temp.getId()==ID.Player) {
 				if(getBounds().intersects(temp.getBounds().getBoundsInLocal()) && temp.isShow){
@@ -54,7 +52,7 @@ public class Enemy2 extends BattleshipObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer%75==10) new Bullet(x+width/2, y+height,0,7, getId(), getDamage(), handler);
+		if(gunTimer%75==10) new Bullet(x+width/2, y+height,0,7, getId(), getDamage(), handler);
 	}
 	
 	@Override
@@ -70,20 +68,15 @@ public class Enemy2 extends BattleshipObject {
 		return 0;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
+		
+	public void setSpeed() {
+		if(x>=limitX-width || x<=0) velX*=-1; 
+		if(y>=limitY) {
+			y=limitY;
+			velY=0;
+		}
 	}
 
-	@Override
-	public void getHit(GameObject object) {
-		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
-		checkShow();
-	}
 
-	@Override
-	public void checkShow() {
-		if(hp<=0) setShow(false);
-	}
 
 }

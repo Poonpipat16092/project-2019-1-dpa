@@ -13,14 +13,14 @@ import javafx.scene.shape.Shape;
 public class Boss extends BattleshipObject {
 	private boolean timerStart=false;
 	private boolean ultimate=false;
-	public int selfTimer=0;
+	private int gunTimer=0;
 	
 	public Boss(ObjectHandler handler) {
 		super(200,-100,ID.Boss,handler,400,100);
 		setDamage(2);
 		setScore(10000);
 		hp=300;
-		setupSpeed();
+		setSpeed();
 		limitX=800;
 		limitY=0;
 		handler.addObject(this);
@@ -32,10 +32,10 @@ public class Boss extends BattleshipObject {
 		if(!isShow) return;
 		x+=velX;
 		y+=velY;
-		setupSpeed();
+		setSpeed();
 		shooting();
 		collision();
-		if(timerStart) selfTimer++;
+		if(timerStart) gunTimer++;
 	}
 
 	public void collision() {
@@ -51,11 +51,11 @@ public class Boss extends BattleshipObject {
 	
 	public void shooting() {
 		if(!isShow) return;
-		if(selfTimer>=1200) {
+		if(gunTimer>=1200) {
 			ultimate=false;
-			selfTimer=0;
+			gunTimer=0;
 		}
-		if(ultimate==true && selfTimer%20==10) {
+		if(ultimate==true && gunTimer%20==10) {
 //			new BossBullet(x+width/3, y+height, getDamage(), handler,0);
 //			new BossBullet(x+width/3*2, y+height, getDamage(), handler,0);
 //			new BossBullet(x+width/3, y+height, getDamage(), handler,1);
@@ -67,13 +67,13 @@ public class Boss extends BattleshipObject {
 			return;
 		}
 		if(ultimate==true) return;
-		if(selfTimer>=1000) {
+		if(gunTimer>=1000) {
 			ultimate=true;
 			AudioLoader.MEGA_LASER.play();
 			new LaserBeam(this,handler);
 			return;
 		}
-		if(selfTimer%80==10) {
+		if(gunTimer%80==10) {
 			new BossBullet(x+width/2, y+height, getDamage(), handler,0);
 			new BossBullet(x+width/2, y+height, getDamage(), handler,1);
 			new BossBullet(x+width/2, y+height, getDamage(), handler,2);
@@ -84,14 +84,14 @@ public class Boss extends BattleshipObject {
 	@Override
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
-		if(!ultimate && selfTimer>=800) {
+		if(!ultimate && gunTimer>=800) {
 			gc.drawImage(ImageLoader.BOSS_CHARGING, x+width/2-30, y+height);
 			gc.drawImage(ImageLoader.BOSS_CHARGING, x+width/2+10, y+height);
 		}
 		gc.drawImage(ImageLoader.BOSS, x, y);
 	}
 
-	public void setupSpeed() {
+	public void setSpeed() {
 		if(y<limitY) {
 			velY=2;
 			velX=0;
@@ -114,20 +114,5 @@ public class Boss extends BattleshipObject {
 		return -1;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
-	}
-
-	@Override
-	public void getHit(GameObject object) {
-		if(object instanceof Damagable) hp-=((Damagable) object).getDamage();
-		checkShow();
-	}
-
-	@Override
-	public void checkShow() {
-		if(hp<=0) setShow(false);
-	}
 
 }

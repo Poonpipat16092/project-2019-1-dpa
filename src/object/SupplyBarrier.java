@@ -20,13 +20,6 @@ public class SupplyBarrier extends SupplyObject {
 		//
 	}
 
-	@Override
-	public void tick() {
-		checkShow();
-		if(isShow()==false) return;
-		y+=velY;
-		collision();
-	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
@@ -49,11 +42,6 @@ public class SupplyBarrier extends SupplyObject {
 	@Override
 	public int getZ() {
 		return 2;
-	}
-
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,width,height);
 	}
 
 	@Override

@@ -15,22 +15,15 @@ public class Bullet extends BulletObject {
 		setDamage(damage);
 		limitY=700;
 		limitX=900;
-		setVel(velX,velY);
-		setDamage(damage);;
+		setVelX(velX);
+		setVelY(velY);
 		handler.addObject(this);
 	}
 	
 	@Override
 	public void tick() {
 		if(!isShow) return;
-		if(y<0 || y>limitY) {
-			this.setShow(false);
-			return;
-		}
-		if(x<0 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
+		checkShow();
 		x+=velX;
 		y+=velY;
 	}
@@ -54,22 +47,21 @@ public class Bullet extends BulletObject {
 		return 1;
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		Rectangle rect=new Rectangle(x,y,width,height);
-		return rect;
-	}
+	
 	
 	public void getHit(GameObject object) {
-		checkShow();
-	}
-		
-	public void setVel(int velX,int velY) {
-		this.velX=velX;
-		this.velY=velY;
-	}
-	
-	public void checkShow() {
 		setShow(false);
+	}
+			
+	public void checkShow() {
+		if(y<0 || y>limitY) {
+			this.setShow(false);
+			return;
+		}
+		if(x<0 || x>limitX) {
+			this.setShow(false);
+			return;
+		}
+
 	}
 }
