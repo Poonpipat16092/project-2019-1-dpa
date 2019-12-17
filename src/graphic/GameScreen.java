@@ -42,7 +42,7 @@ public class GameScreen implements Screen {
 	private boolean pause = false ;
 	
 	public GameScreen(Stage primarystage) {
-		primarystage= primarystage;
+		this.primarystage= primarystage;
 		canvas=new Canvas(WIDTH,HEIGHT);
 		gc=canvas.getGraphicsContext2D();
 		
