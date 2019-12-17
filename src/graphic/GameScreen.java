@@ -41,8 +41,8 @@ public class GameScreen implements Screen {
 	private boolean[] keyDown;
 	private boolean pause = false ;
 	
-	public GameScreen(Stage Primarystage) {
-		primarystage=Primarystage;
+	public GameScreen(Stage primarystage) {
+		primarystage= primarystage;
 		canvas=new Canvas(WIDTH,HEIGHT);
 		gc=canvas.getGraphicsContext2D();
 		
