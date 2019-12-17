@@ -49,16 +49,5 @@ public class SupplyBarrier extends SupplyObject {
 		setShow(false);
 	}
 
-	@Override
-	public void checkShow() {
-		if(x<-50 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
-		if(y>limitY) {
-			this.setShow(false);
-			return;
-		}
-	}
-
+	
 }

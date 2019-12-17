@@ -1,5 +1,7 @@
 package graphic;
 
+import exception.BarrierOnException;
+import exception.NullSelectPlayerException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -136,12 +138,12 @@ public class SelectPlayerScreen implements Screen {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				try {
 				if(selectedPlayer == "") {
 					AudioLoader.BUTTON_CLICK.play();
 					Alert alert = new Alert(AlertType.INFORMATION,"Please Select Player");
 					alert.showAndWait();
-					
-					return;
+					throw new NullSelectPlayerException();
 				}
 				else {
 					AudioLoader.BUTTON_CLICK.play();
@@ -150,6 +152,10 @@ public class SelectPlayerScreen implements Screen {
 					game.startAnimation();
 					System.out.println(selectedPlayer);
 					AudioLoader.START_SONG.stopSong();
+				}
+				}
+				catch (NullSelectPlayerException e) {
+					System.out.println(e.getMessage());
 				}
 			}
 		});

@@ -43,7 +43,7 @@ public class LaserBeam extends BulletObject {
 
 		
 	public void getHit(GameObject object) {
-		
+		checkShow();
 	}
 		
 	public void checkShow() {

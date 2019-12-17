@@ -1,6 +1,8 @@
 package object;
 
 
+import exception.BarrierOnException;
+import exception.MaxHealthException;
 import graphic.AudioLoader;
 import graphic.GameScreen;
 import graphic.ImageLoader;
@@ -71,8 +73,15 @@ public class Player extends BattleshipObject {
 	}
 	
 	public void getHealth(int health) {
-		hp+=health;
-		if(hp>15) hp=15;
+		try {
+			if(hp>=15) {
+				throw new MaxHealthException();
+			}
+			hp+=health;
+		}
+		catch(MaxHealthException e){
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	@Override
@@ -142,7 +151,13 @@ public class Player extends BattleshipObject {
 		}
 	
 	public void setBarrier(boolean on) {
-		isBarrier=on;
+		try {
+			if(isBarrier && on) throw new BarrierOnException();
+			isBarrier=on;
+		}
+		catch(BarrierOnException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public boolean isBarrier() {

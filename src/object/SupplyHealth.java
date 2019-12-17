@@ -13,10 +13,6 @@ public class SupplyHealth extends SupplyObject {
 	
 	public SupplyHealth(ObjectHandler handler){
 		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
-		velX=0;
-		velY=2;
-		limitX=800;
-		limitY=700;
 		handler.addObject(this);
 	}
 
@@ -49,16 +45,5 @@ public class SupplyHealth extends SupplyObject {
 		setShow(false);
 	}
 
-	@Override
-	public void checkShow() {
-		if(x<-50 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
-		if(y>limitY) {
-			this.setShow(false);
-			return;
-		}
-	}
 
 }

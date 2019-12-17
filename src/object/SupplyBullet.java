@@ -1,6 +1,7 @@
 package object;
 
 import graphic.AudioLoader;
+import graphic.ImageLoader;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -8,18 +9,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class SupplyBullet extends SupplyObject {
-	public static final Image greensupply=new Image("greenSupply.png", 30, 30, false, true);
-	public static final Image bluesupply=new Image("blueSupply.png", 30, 30, false, true);
 	private int mode;
 	
 	
 	public SupplyBullet(ObjectHandler handler){
 		super(random.nextInt(770),random.nextInt(200)-400,ID.Supply,handler);
 		mode=random.nextInt(2);
-		velX=0;
-		velY=2;
-		limitX=800;
-		limitY=700;
 		handler.addObject(this);
 
 	}
@@ -28,10 +23,10 @@ public class SupplyBullet extends SupplyObject {
 	public void draw(GraphicsContext gc) {
 		if(!isShow) return;
 		if(mode==0) {
-			gc.drawImage(bluesupply, x, y);
+			gc.drawImage(ImageLoader.BLUE_AMMUNITION_ICON, x, y);
 		}
 		if(mode==1) {
-			gc.drawImage(greensupply, x, y);
+			gc.drawImage(ImageLoader.GREEN_AMMUNITION_ICON, x, y);
 		}
 	}
 	
@@ -58,16 +53,5 @@ public class SupplyBullet extends SupplyObject {
 		setShow(false);
 	}
 
-	@Override
-	public void checkShow() {
-		if(x<-50 || x>limitX) {
-			this.setShow(false);
-			return;
-		}
-		if(y>limitY) {
-			this.setShow(false);
-			return;
-		}
-	}
 
 }
