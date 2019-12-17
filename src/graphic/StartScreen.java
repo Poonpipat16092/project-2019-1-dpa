@@ -44,6 +44,11 @@ public class StartScreen implements Screen{
 		Pane root=new Pane();
 		root.setPrefSize(WIDTH, HEIGHT);
 		gc.drawImage(ImageLoader.START_SCREEN, 0, 0);
+		gc.setFill(Color.CYAN);
+		gc.setFont(HEADER_FONT);
+		gc.fillText("DPA", 20, 100);
+		gc.setFill(Color.RED);
+		gc.fillText("SHOOTER", 150, 100);
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
 		AudioLoader.START_SONG.playSong();

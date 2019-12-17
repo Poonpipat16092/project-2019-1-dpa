@@ -10,9 +10,7 @@ import javafx.stage.Stage;
 import object.ObjectHandler;
 
 public class PauseScreen  {
-	public static final Font mainFont = Font.loadFont(ClassLoader.getSystemResourceAsStream("supermarket.ttf"), 30);
 	public static final Font PAUSE_FONT = Font.loadFont(ClassLoader.getSystemResourceAsStream("supermarket.ttf"), 50);
-	
 	
 	public static void draw(GraphicsContext gc) {
 	
@@ -30,11 +28,5 @@ public class PauseScreen  {
 		
 	}
 
-
-	
-	public static void startAnimation() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

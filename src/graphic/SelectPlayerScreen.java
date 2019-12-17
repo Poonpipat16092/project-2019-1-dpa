@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 public class SelectPlayerScreen implements Screen {
 	
-	private Button player1,player2,startButton;
+	private Button player1,player2,playtButton;
 	private Stage primarystage ;
 	private GraphicsContext gc ;
 	private Canvas canvas ;
@@ -52,7 +52,7 @@ public class SelectPlayerScreen implements Screen {
 		gc.fillText("Select Player", 205, 100);
 		
 		gc.setFill(Color.WHITE);
-		gc.setFont(NORMAL);
+		gc.setFont(SELECT_PLAYER);
 		gc.fillText("Player 1", 170, 350);
 		gc.fillText("Player 2", 475, 350);
 		
@@ -126,12 +126,12 @@ public class SelectPlayerScreen implements Screen {
 		start.setPadding(new Insets(425,15,10,10)); //down 400 
 		start.setAlignment(Pos.BOTTOM_CENTER);
 		
-		startButton = new Button("PLAY!");
-		startButton.setPrefSize(150, 150);
-		startButton.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
-		startButton.setFont(NORMAL);
+		playtButton = new Button("PLAY!");
+		playtButton.setPrefSize(150, 150);
+		playtButton.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
+		playtButton.setFont(SELECT_PLAYER);
 		
-		startButton.setOnAction(new EventHandler<ActionEvent>() {
+		playtButton.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent arg0) {
@@ -156,7 +156,7 @@ public class SelectPlayerScreen implements Screen {
 		
 		
 		player.getChildren().addAll(player1,player2);
-		start.getChildren().addAll(startButton);
+		start.getChildren().addAll(playtButton);
 		
 	}
 	/**
