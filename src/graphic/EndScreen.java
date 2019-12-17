@@ -47,7 +47,7 @@ public class EndScreen implements Screen {
 		gc.setFill(Color.WHITE);
 		gc.setLineWidth(2);
 		if(isWin) {
-			gc.fillText("WINNER!", 285, 100);
+			gc.fillText("WINNER!", 300, 100);
 			gc.drawImage(ImageLoader.WINNER_CUP, 300, 180);
 		}
 		else {
