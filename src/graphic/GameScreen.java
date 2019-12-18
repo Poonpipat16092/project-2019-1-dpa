@@ -296,6 +296,7 @@ public class GameScreen implements Screen {
 			end.startAnimation();
 		}
 		if(stage==5 && haveBossspawn() && !boss.isShow()) {
+			AudioLoader.NORMAL_SONG.stopSong();
 			AudioLoader.BOSS_SONG.stopSong();;
 			boolean isWin = true ;
 			AudioLoader.CONGRAT.play();
