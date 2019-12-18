@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="object.Bullet" project="DPA" file="/DPA/src/object/Bullet.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1199" y="929"/>    
+    <position height="-1" width="-1" x="1185" y="813"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <interface id="5" language="java" name="graphic.Screen" project="DPA" file="/DPA/src/graphic/Screen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1757" y="49"/>    
+    <position height="-1" width="-1" x="340" y="1034"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="object.GameObject" project="DPA" file="/DPA/src/object/GameObject.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1109" y="-21"/>    
+    <position height="-1" width="-1" x="1043" y="-40"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="graphic.EndScreen" project="DPA" file="/DPA/src/graphic/EndScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1738" y="-236"/>    
+    <position height="-1" width="-1" x="347" y="720"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="object.Enemy1" project="DPA" file="/DPA/src/object/Enemy1.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="308" y="568"/>    
+    <position height="-1" width="-1" x="313" y="438"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="object.Enemy2" project="DPA" file="/DPA/src/object/Enemy2.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="102" y="527"/>    
+    <position height="-1" width="-1" x="123" y="444"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="graphic.PauseScreen" project="DPA" file="/DPA/src/graphic/PauseScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1536" y="-253"/>    
+    <position height="-1" width="-1" x="111" y="658"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="graphic.StartScreen" project="DPA" file="/DPA/src/graphic/StartScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1943" y="-226"/>    
+    <position height="-1" width="-1" x="115" y="845"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="graphic.GameScreen" project="DPA" file="/DPA/src/graphic/GameScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2154" y="-95"/>    
+    <position height="-1" width="-1" x="569" y="879"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="object.Boss" project="DPA" file="/DPA/src/object/Boss.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="705" y="591"/>    
+    <position height="-1" width="-1" x="707" y="472"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="object.BossBullet" project="DPA" file="/DPA/src/object/BossBullet.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="864" y="924"/>    
+    <position height="-1" width="-1" x="823" y="826"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="object.Enemy3" project="DPA" file="/DPA/src/object/Enemy3.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="509" y="562"/>    
+    <position height="-1" width="-1" x="509" y="459"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="object.LaserBeam" project="DPA" file="/DPA/src/object/LaserBeam.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1266" y="559"/>    
+    <position height="-1" width="-1" x="1021" y="1073"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </class>  
   <interface id="19" language="java" name="object.Damagable" project="DPA" file="/DPA/src/object/Damagable.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="812" y="197"/>    
+    <position height="-1" width="-1" x="780" y="273"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="object.SupplyObject" project="DPA" file="/DPA/src/object/SupplyObject.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1430" y="353"/>    
+    <position height="-1" width="-1" x="1304" y="500"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,7 +192,7 @@
   </class>  
   <class id="22" language="java" name="object.BulletObject" project="DPA" file="/DPA/src/object/BulletObject.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="965" y="532"/>    
+    <position height="-1" width="-1" x="978" y="532"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -200,68 +200,68 @@
     </display>  
   </class>  
   <generalization id="23">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="7"/>  
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <generalization id="24">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="20"/>  
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="7"/>  
   </generalization>  
   <generalization id="25">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="26">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="19"/>  
-  </realization>  
-  <realization id="27">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="19"/>  
-  </realization>  
-  <generalization id="28">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
-  <realization id="32">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <realization id="33">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <generalization id="34">    
+  <generalization id="26">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="35">    
+  <realization id="27">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="28">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="29">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="5"/>  
   </realization>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="20"/>    
+  <generalization id="30">    
+    <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <generalization id="37">    
+  <generalization id="31">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="32">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="22"/>  
   </generalization>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="22"/>    
+  <generalization id="33">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <realization id="36">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <realization id="37">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
