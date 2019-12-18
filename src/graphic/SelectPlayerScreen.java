@@ -3,6 +3,7 @@ package graphic;
 import exception.BarrierOnException;
 import exception.NullSelectPlayerException;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -133,30 +134,29 @@ public class SelectPlayerScreen implements Screen {
 		playtButton.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
 		playtButton.setFont(SELECT_PLAYER);
 		
-		playtButton.setOnAction(new EventHandler<ActionEvent>() {
-			
+		playtButton.setOnMouseClicked(new EventHandler<Event>() {
+
 			@Override
-			public void handle(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+			public void handle(Event arg0) {
 				try {
-				if(selectedPlayer == "") {
-					AudioLoader.BUTTON_CLICK.play();
-					Alert alert = new Alert(AlertType.INFORMATION,"Please Select Player");
-					alert.showAndWait();
-					throw new NullSelectPlayerException();
-				}
-				else {
-					AudioLoader.BUTTON_CLICK.play();
-					GameScreen game=new GameScreen(primarystage);
-					game.getPlayer().setPlayer(selectedPlayer);
-					game.startAnimation();
-					System.out.println(selectedPlayer);
-					AudioLoader.START_SONG.stopSong();
-				}
-				}
-				catch (NullSelectPlayerException e) {
-					System.out.println(e.getMessage());
-				}
+					if(selectedPlayer == "") {
+						AudioLoader.BUTTON_CLICK.play();
+						Alert alert = new Alert(AlertType.INFORMATION,"Please Select Player");
+						alert.showAndWait();
+						throw new NullSelectPlayerException();
+					}
+					else {
+						AudioLoader.BUTTON_CLICK.play();
+						GameScreen game=new GameScreen(primarystage);
+						game.getPlayer().setPlayer(selectedPlayer);
+						game.startAnimation();
+						System.out.println(selectedPlayer);
+						AudioLoader.START_SONG.stopSong();
+					}
+					}
+					catch (NullSelectPlayerException e) {
+						System.out.println(e.getMessage());
+					}
 			}
 		});
 		

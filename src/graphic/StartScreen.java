@@ -2,6 +2,7 @@ package graphic;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -82,8 +83,9 @@ public class StartScreen implements Screen{
 		start.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px");
 		exit.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;-fx-border-color: #4F42B5;-fx-border-width: 2px;");
 
-		start.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent arg0) {
+
+		start.setOnMouseClicked(new EventHandler<Event>() {
+			public void handle(Event arg0) {
 				AudioLoader.BUTTON_CLICK.play();
 				SelectPlayerScreen selectedPlayer = new SelectPlayerScreen(primarystage);
 				selectedPlayer.startAnimation();
@@ -91,9 +93,9 @@ public class StartScreen implements Screen{
 			}
 		});
 		
-		exit.setOnAction(new EventHandler<ActionEvent>() {
+		exit.setOnMouseClicked(new EventHandler<Event>() {
 			@Override
-			public void handle(ActionEvent arg0) {
+			public void handle(Event arg0) {
 				AudioLoader.BUTTON_CLICK.play();
 				Platform.exit();
 			}
