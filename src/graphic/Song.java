@@ -6,7 +6,6 @@ import javafx.scene.media.MediaPlayer;
 
 public class Song {
 	public static boolean isPlaying = true ;
-	private Media bgMedia;
 	private  MediaPlayer mediaPlayer ;
 	private int music ;
 	private String url ;
