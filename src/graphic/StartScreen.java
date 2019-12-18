@@ -28,15 +28,15 @@ public class StartScreen implements Screen{
 	private VBox menu;
 	
 	
-	public StartScreen(Stage Primarystage) {
+	public StartScreen(Stage primarystage) {
 		canvas=new Canvas(WIDTH, HEIGHT);
 		gc=canvas.getGraphicsContext2D();
 		setupMenu();
-		primarystage = Primarystage ;
-		primarystage.setTitle("DPA");
-		primarystage.setResizable(false);
-		primarystage.setWidth(WIDTH);
-		primarystage.setHeight(HEIGHT);
+		this.primarystage = primarystage ;
+		this.primarystage.setTitle("DPA");
+		this.primarystage.setResizable(false);
+		this.primarystage.setWidth(WIDTH);
+		this.primarystage.setHeight(HEIGHT);
 	}
 	
 	@Override
