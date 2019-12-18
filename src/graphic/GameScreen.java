@@ -33,7 +33,7 @@ public class GameScreen implements Screen {
 	private AnimationTimer timer;
 	private static GameHud hud;
 	private ObjectHandler handler=new ObjectHandler();
-	private int stage=3;
+	private int stage=1;
 	private int stageTime=0;
 	private boolean bossSpawn=false;
 	private Boss boss;
@@ -289,6 +289,7 @@ public class GameScreen implements Screen {
 		if(!player.isShow()) {
 			boolean isWin = false;
 			AudioLoader.DIED.play();
+			AudioLoader.BOSS_SONG.stopSong();
 			AudioLoader.NORMAL_SONG.stopSong();
 			timer.stop();
 			EndScreen end = new EndScreen(primarystage, isWin);
